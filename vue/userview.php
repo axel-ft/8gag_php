@@ -7,7 +7,7 @@
 
 </head>
 <?php
-require ('nav.php');
+require ('vue/navbar.php');
 ?>
 <body>
 
