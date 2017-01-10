@@ -35,8 +35,8 @@ class UtilisateurSQL {
 		if ($id !== null) {
         		$get_users = $db->prepare('SELECT * FROM users WHERE id = :id');
 			$intid = intval($id);
-			$get_produit->bindParam(':id', $intid, PDO::PARAM_INT);
-        		$get_produit->execute();
+			$get_users->bindParam(':id', $intid, PDO::PARAM_INT);
+        		$get_users->execute();
         		$users = $get_users->fetchAll();
 			return $users;
 			echo 'hello';

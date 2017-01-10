@@ -1,11 +1,8 @@
 <?php
 class ImageSQL {
-	function __construct($db) {
-		$this->db = $db;
-	}	
-
 	//Insérer les informations d'image
 	public function insert_image($date_upload, $chemin_image) {
+		global $db;
         	$image_ins = $db->prepare('INSERT INTO images(date_upload, ip_user, id_user, link, name_img, description) VALUES (:date_upload, :ip_user, :id_user, :link, :name_img, :description)');
 		$image_ins->bindParam(':date_upload', $date_upload, PDO::PARAM_STR);
         	$image_ins->bindParam(':ip_user', $_SERVER['REMOTE_ADDR'], PDO::PARAM_STR);
@@ -15,21 +12,72 @@ class ImageSQL {
         	$image_ins->bindParam(':description', $_POST['description'], PDO::PARAM_STR);
         	$image_ins->execute();
 	}
+	
+	/*****
+	**
+	**	Récupère une ou plusieurs images.
+	**	Si $limit est défini, les images sont classées par date d'upload
+	**	$limit pour les x dernières images uploadées
+	**	$id pour récupérer une image
+	**	$id_user pour récupérer les images d'un utilisateur via son id
+	**
+	*****/
+	public function get_images($limit = null, $id_user = null, $name = null, $id = null) {
+		global $db;
 
-	public function get_liste_produits($limit, $id = null) {
-		if ($id !== null) {
-        		$get_produit = $db->prepare('SELECT * FROM product WHERE id = :id');
-			$intid = intval($id);
-			$get_produit->bindParam(':id', $intid, PDO::PARAM_INT);
-        		$get_produit->execute();
-        		$produits = $get_produit->fetchAll();
-			return $produits;
-		} else {
-			$get_produits = $db->prepare('SELECT * FROM product');
-                        $get_produits->execute();
-                        $produits = $get_produits->fetchAll();
-			return $produits;
+		if ($limit !== null) {
+			$intlimit = intval($limit);
 		}
-	}
 
+		if ($id !== null) {
+			$intid = intval($id);
+		}
+
+		if ($id_user !== null) {
+			$intid_user = intval($id_user);
+		}
+
+		$select = 'SELECT * FROM images ';
+		$idreq = ' WHERE id = :id ';
+		$name = '%' . htmlEntities($name) . '%';
+		$namereq = ' WHERE name_img OR description LIKE :namereq ';
+		$user = ' WHERE id_user = :id_user ';
+                $limitreq = ' LIMIT :limit ';
+                $orderby = 'ORDER BY date_upload';
+
+
+		if (isset($intlimit) && isset($intid_user)) {
+		//Les x dernières images uploadées par un utilisateur
+        		$get_images = $db->prepare($select . $user . $limitreq . $orderby);
+			$get_images->bindParam(':id_user', $intid_user, PDO::PARAM_INT);
+			$get_images->bindParam(':limit', $intlimit, PDO::PARAM_INT);
+		} else if (isset($intlimit)) {
+		//Les x dernières images uploadées
+			$get_images = $db->prepare($select . $limitreq . $orderby);
+			$get_images->bindParam(':limit', $intlimit, PDO::PARAM_INT);
+		} else if (isset($intid)) {
+		//Une image par son id
+			$get_images = $db->prepare($select . $idreq . $limitreq . $orderby);
+			$get_images->bindParam(':id', $intlimit, PDO::PARAM_INT);
+			$get_images->bindParam(':limit', $intlimit, PDO::PARAM_INT);
+
+		} else if (isset($name) && $name !== null) {
+		//Recherche par mot dans le nom ou la description de l'image
+			$get_images = $db->prepare($select . $namereq . $orderby);
+			$get_images->bindParam(':id', $intlimit, PDO::PARAM_INT);
+			$get_images->bindParam(':namereq', $name, PDO::PARAM_STR);
+		} else if () {
+
+		} else if () {
+
+		} else if () {
+
+		} else {
+			$get_images = $db->prepare($select);
+		}
+       
+	 	$get_images->execute();
+       		$images = $get_images->fetchAll();
+		return $images;
+	}
 }
