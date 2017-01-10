@@ -1,7 +1,7 @@
-<!doctype html>
-<html>
-<head>
-</head>
-<body>
-</body>
-</html>
+<?php
+
+
+
+
+require_once ('vue/index.php');
+
