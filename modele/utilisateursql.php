@@ -30,7 +30,7 @@ class UtilisateurSQL {
         }
 
 	//Récupérer un utilisateur en précisant l'id en argument. Si aucun id n'est précisé tous les utilisateurs sont retournés
-	public function getUser($id = null) {
+	public function get_user($id = null) {
 		global $db;
 		if ($id !== null) {
         		$get_users = $db->prepare('SELECT * FROM users WHERE id = :id');
