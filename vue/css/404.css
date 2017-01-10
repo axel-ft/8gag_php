@@ -1,0 +1,25 @@
+#p404 {
+        display: flex;
+        align-items: center;
+        background: url('../images/404.jpg') no-repeat scroll;
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+}
+
+#t404 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        padding: 25px;
+        height: 300px;
+        width: 30%;
+        border-radius: 5px;
+        background: rgba(252,252,252,0.6);
+}
+
+#t404 > a {
+        margin-top: 50px;
+}
