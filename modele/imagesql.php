@@ -46,43 +46,49 @@ class ImageSQL {
 		$idreq = 'WHERE id = :id ';
 		$namereq = 'WHERE name_img OR description LIKE :namereq ';
 		$user = 'WHERE id_user = :id_user ';
-                $limitreq = 'LIMIT :limit ';
-                $orderby = 'ORDER BY date_upload';
+                $limitreq = 'LIMIT :limit';
+                $orderby = 'ORDER BY date_upload ';
 
 
-		if (isset($intlimit) && isset($intid_user)) {
+		if (isset($intlimit) && isset($intid_user) && !isset($intid) && $name === null) {
 		//Les x dernières images uploadées par un utilisateur
-        		$get_images = $db->prepare($select . $user . $limitreq . $orderby);
+        		$get_images = $db->prepare($select . $user . $orderby . $limitreq);
 			$get_images->bindParam(':id_user', $intid_user, PDO::PARAM_INT);
 			$get_images->bindParam(':limit', $intlimit, PDO::PARAM_INT);
-		} else if (isset($intlimit)) {
-		//Les x dernières images uploadées
-			$get_images = $db->prepare($select . $limitreq . $orderby);
-			$get_images->bindParam(':limit', $intlimit, PDO::PARAM_INT);
-		} else if (isset($intid)) {
+		} else if (isset($intid) && !isset($intlimit)  && !isset($intid_user) && $name === null) {
 		//Une image par son id
 			$get_images = $db->prepare($select . $idreq);
+			$get_images->bindParam(':id', $intid, PDO::PARAM_INT);
+		} else if ($name !== null && !isset($intid_user) && isset($intlimit) && !isset($intid)) {
+		//Recherche par mot dans le nom ou la description de l'image. Nombre de résultats renvoyés défini par limit
+			$get_images = $db->prepare($select . $namereq . $orderby . $limitreq);
+			$get_images->bindParam(':namereq', $name, PDO::PARAM_STR);
 			$get_images->bindParam(':limit', $intlimit, PDO::PARAM_INT);
-		} else if (isset($name) && $name !== null) {
+		} else if ($name !== null  && !isset($intid_user) && !isset($intid)) {
 		//Recherche par mot dans le nom ou la description de l'image
 			$get_images = $db->prepare($select . $namereq . $orderby);
 			$get_images->bindParam(':namereq', $name, PDO::PARAM_STR);
-		} else if (isset($name) && $name !== null && isset($intlimit)) {
-		//Recherche par mot dans le nom ou la description de l'image. Nombre de résultats renvoyés défini par limit
-			$get_images = $db->prepare($select . $namereq . $orderby);
-			$get_images->bindParam(':namereq', $name, PDO::PARAM_STR);
+		} else if (isset($intlimit) && !isset($intid) && $name === null) {
+		//Les x dernières images uploadées
+			$get_images = $db->prepare($select . $orderby . $limitreq);
 			$get_images->bindParam(':limit', $intlimit, PDO::PARAM_INT);
-		} else if (isset($intid_user)) {
+		} else if (isset($intid_user) && $name === null && !isset($intid)) {
+		//Toutes les images uploadées par un utilisateur
         		$get_images = $db->prepare($select . $user . $orderby);
 			$get_images->bindParam(':id_user', $intid_user, PDO::PARAM_INT);
 		} else if ($limit === null && $id_user === null && $name == null && $id === null) {
+		//Toutes les images uploadées
 			$get_images = $db->prepare($select);
 		} else {
-			echo 'Erreur';
+			$erreur = 'Erreur';
 		}
        
-			var_dump($get_images);
-       		$images = $get_images->fetchAll();
-		return $images;
+		if (!isset($erreur)) {
+			$get_images->execute();
+       			$images = $get_images->fetchAll();
+			return $images;
+		} else {
+			return $erreur;
+		}
 	}
 }
