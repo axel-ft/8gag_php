@@ -9,11 +9,11 @@ class UtilisateurSQL {
 	//Création d'un compte utilisateur
 	public function inscription_compte() {
 		global $db;
-		$inscription = $db->prepare('INSERT INTO users(name, fname, pseudo, email, password) VALUES (:name, :fname, :pseudo, :email, :password)');
+		$inscription = $db->prepare('INSERT INTO users(name, fname, pseudo, mail, password) VALUES (:name, :fname, :pseudo, :mail, :password)');
 		$inscription->bindParam(':name', $_POST['name'], PDO::PARAM_STR);
 		$inscription->bindParam(':fname', $_POST['fname'], PDO::PARAM_STR);
 		$inscription->bindParam(':pseudo', $_POST['pseudo'], PDO::PARAM_STR);
-		$inscription->bindParam(':email', $_POST['email'], PDO::PARAM_STR);
+		$inscription->bindParam(':mail', $_POST['mail'], PDO::PARAM_STR);
 		$inscription->bindParam(':password', $_POST['password'], PDO::PARAM_STR);
 		$inscription->execute();
 	}
@@ -21,8 +21,8 @@ class UtilisateurSQL {
 	//Récupère les informations d'un utilisateur pour la connexion (via mail et password)
         public function connect_compte() {
 		global $db;
-                $connexion = $db->prepare('SELECT * FROM users WHERE email = :email AND password = :password');
-                $connexion->bindParam(':email', $_POST['email']);
+                $connexion = $db->prepare('SELECT * FROM users WHERE mail = :mail AND password = :password');
+                $connexion->bindParam(':mail', $_POST['mail']);
                 $connexion->bindParam(':password', $_POST['password']);
                 $connexion->execute();
                 $compte = $connexion->fetchAll();
@@ -61,11 +61,11 @@ class UtilisateurSQL {
 	//Mettre à jour le profil à l'exception du mot de passe
 	public function maj_compte() {
 		global $db;
-		$maj = $db->prepare('UPDATE users SET name = :name, fname = :fname, pseudo = :pseudo, email = :email WHERE id = :id');
+		$maj = $db->prepare('UPDATE users SET name = :name, fname = :fname, pseudo = :pseudo, mail = :mail WHERE id = :id');
 		$maj->bindParam(':name', $_POST['name'], PDO::PARAM_STR);
 		$maj->bindParam(':fname', $_POST['fname'], PDO::PARAM_STR);
 		$maj->bindParam(':pseudo', $_POST['pseudo'], PDO::PARAM_STR);
-		$maj->bindParam(':email', $_POST['email'], PDO::PARAM_STR);
+		$maj->bindParam(':mail', $_POST['mail'], PDO::PARAM_STR);
 		$maj->bindParam(':id', $_SESSION['id'], PDO::PARAM_INT);
 		$maj->execute();
 	}
