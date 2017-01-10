@@ -20,6 +20,7 @@ class ImageSQL {
 	**	$limit pour les x dernières images uploadées
 	**	$id pour récupérer une image
 	**	$id_user pour récupérer les images d'un utilisateur via son id
+	**	Utiliser null pour ne pas tenir compte d'un argument
 	**
 	*****/
 	public function get_images($limit = null, $id_user = null, $name = null, $id = null) {
@@ -36,13 +37,16 @@ class ImageSQL {
 		if ($id_user !== null) {
 			$intid_user = intval($id_user);
 		}
+		
+		if ($name !== null) {
+			$name = '%' . htmlEntities($name) . '%';
+		}
 
 		$select = 'SELECT * FROM images ';
-		$idreq = ' WHERE id = :id ';
-		$name = '%' . htmlEntities($name) . '%';
-		$namereq = ' WHERE name_img OR description LIKE :namereq ';
-		$user = ' WHERE id_user = :id_user ';
-                $limitreq = ' LIMIT :limit ';
+		$idreq = 'WHERE id = :id ';
+		$namereq = 'WHERE name_img OR description LIKE :namereq ';
+		$user = 'WHERE id_user = :id_user ';
+                $limitreq = 'LIMIT :limit ';
                 $orderby = 'ORDER BY date_upload';
 
 
@@ -57,26 +61,27 @@ class ImageSQL {
 			$get_images->bindParam(':limit', $intlimit, PDO::PARAM_INT);
 		} else if (isset($intid)) {
 		//Une image par son id
-			$get_images = $db->prepare($select . $idreq . $limitreq . $orderby);
-			$get_images->bindParam(':id', $intlimit, PDO::PARAM_INT);
+			$get_images = $db->prepare($select . $idreq);
 			$get_images->bindParam(':limit', $intlimit, PDO::PARAM_INT);
-
 		} else if (isset($name) && $name !== null) {
 		//Recherche par mot dans le nom ou la description de l'image
 			$get_images = $db->prepare($select . $namereq . $orderby);
-			$get_images->bindParam(':id', $intlimit, PDO::PARAM_INT);
 			$get_images->bindParam(':namereq', $name, PDO::PARAM_STR);
-		} else if () {
-
-		} else if () {
-
-		} else if () {
-
-		} else {
+		} else if (isset($name) && $name !== null && isset($intlimit)) {
+		//Recherche par mot dans le nom ou la description de l'image. Nombre de résultats renvoyés défini par limit
+			$get_images = $db->prepare($select . $namereq . $orderby);
+			$get_images->bindParam(':namereq', $name, PDO::PARAM_STR);
+			$get_images->bindParam(':limit', $intlimit, PDO::PARAM_INT);
+		} else if (isset($intid_user)) {
+        		$get_images = $db->prepare($select . $user . $orderby);
+			$get_images->bindParam(':id_user', $intid_user, PDO::PARAM_INT);
+		} else if ($limit === null && $id_user === null && $name == null && $id === null) {
 			$get_images = $db->prepare($select);
+		} else {
+			echo 'Erreur';
 		}
        
-	 	$get_images->execute();
+			var_dump($get_images);
        		$images = $get_images->fetchAll();
 		return $images;
 	}
