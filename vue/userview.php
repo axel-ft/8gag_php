@@ -26,7 +26,9 @@ require_once('vue/navbar.php'); // remetre en vue/navbar
             <p>Bienvenue</p> <?=$profil[0]['fname']?> <br />
 
             <br /> Vos Information: <br/><br />
-            <p>Nom :</p> <?=$profil[0]['fname']?><br />
+            <p>Nom :</p> <?=$profil[0]['name']?><br />
+            <p>Prenom :</p> <?=$profil[0]['fname']?><br />
+            <p>Pseudo :</p> <?=$profil[0]['pseudo']?><br />
             <p>Email :</p> <?=$profil[0]['mail']?><br />
 
         <?php } else {
@@ -42,11 +44,11 @@ require_once('vue/navbar.php'); // remetre en vue/navbar
 
 
         <br>
-        <a href="admin.php"><button type="button" class="action-button"> Modifier </button></a>
-        <a href="liste.php"><button type="button" class="action-button"> Vos produits </button></a>
+        <a href="#"><button type="button" class="action-button"> Modifier </button></a>
+        <a href="#"><button type="button" class="action-button"> Vos Photos</button></a>
 
 
-        <a href="logout.php"><button type="button" class="action-button"> Deconnexion </button></a>
+        <a href="index.php?p=logout"><button type="button" class="action-button"> Deconnexion </button></a>
 
 
     </fieldset>
