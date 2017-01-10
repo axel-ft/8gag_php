@@ -14,7 +14,7 @@
                 echo '<li ><a href = "index.php?p=connexion" > Connexion</a ></li >';
                 echo '<li><a href="#">Crée un compte</a></li>';
             } else {
-                echo '<li><a href="#">Deconnexion</a></li>';
+                echo '<li><a href="index.php?p=logout">Deconnexion</a></li>';
             }
             ?>
 
