@@ -8,7 +8,7 @@
         <ul class="topnav" id="myTopnav">
             <li><a href="index.php?p=upload"><i class="material-icons">backup</i> Envoyer</a></li>
 
-            <?php if (!$_SESSION['connected']) { ?>
+            <?php if (!isset($_SESSION['connected'])) { ?>
                 <li><a href="index.php?p=connexion">Connexion</a></li>
                 <li><a href="index.php?p=inscription">Créer un compte</a></li>
             <?php } else { ?>
