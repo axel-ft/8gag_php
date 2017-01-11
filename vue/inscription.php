@@ -2,8 +2,9 @@
 <html lang="fr">
 
 <head>
-    	<title>Inscription</title>
-	<?php require_once('vue/head_commun.php'); ?>
+    <title>Inscription</title>
+    <link rel="stylesheet" href="vue/css/inscription.css">
+    <?php require_once('vue/head_commun.php'); ?>
 </head>
 
 <body>
@@ -12,11 +13,13 @@
     <form action="" method="post">
         <fieldset>
             <h3>Inscription</h3>
-            <input type="text" name="name" placeholder="name">
-            <input type="text" name="firstname" placeholder="firstname">
-            <input type="password" name="password" placeholder="password">
-            <input type="email" name="mail" placeholder="mail">
-            <button type="submit" class="bttn">Envoyer!</button>
+            <?php if (isset($erreur)) echo '<p>' . $erreur . '</p>'; ?>
+                <input type="text" name="name" placeholder="name">
+                <input type="text" name="fname" placeholder="firstname">
+                <input type="text" name="pseudo" placeholder="pseudo">
+                <input type="password" name="password" placeholder="password">
+                <input type="mail" name="mail" placeholder="mail">
+                <button type="submit" class="bttn">Envoyer!</button>
         </fieldset>
     </form>
 
