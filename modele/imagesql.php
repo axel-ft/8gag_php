@@ -6,11 +6,13 @@ class ImageSQL {
         	$image_ins = $db->prepare('INSERT INTO images(date_upload, ip_user, id_user, link, name_img, description) VALUES (:date_upload, :ip_user, :id_user, :link, :name_img, :description)');
 		$image_ins->bindParam(':date_upload', $date_upload, PDO::PARAM_STR);
         	$image_ins->bindParam(':ip_user', $_SERVER['REMOTE_ADDR'], PDO::PARAM_STR);
-		$image_ins->bindParam(':id_user', $_SESSION['id'], PDO::PARAM_INT);
+		$intid_user = intval($_SESSION['id_user']);
+		$image_ins->bindParam(':id_user', $intid_user, PDO::PARAM_INT);
         	$image_ins->bindParam(':link', $chemin_image, PDO::PARAM_STR);
-        	$image_ins->bindParam(':name_img', $_FILES['image']['name'], PDO::PARAM_STR);
+        	$image_ins->bindParam(':name_img', $_POST['name_img'], PDO::PARAM_STR);
         	$image_ins->bindParam(':description', $_POST['description'], PDO::PARAM_STR);
         	$image_ins->execute();
+		print_r($db->errorInfo());
 	}
 	
 	/*****
@@ -98,7 +100,7 @@ class ImageSQL {
                 $maj_image = $db->prepare('UPDATE images SET name_img = :name_img, description = :description, ip_user = :ip_user, id_user = :id_user, date_upload = :date_upload WHERE id = :id');
                 $maj_image->bindParam(':date_upload', $date_upload, PDO::PARAM_STR);
                 $maj_image->bindParam(':ip_user', $_SERVER['REMOTE_ADDR'], PDO::PARAM_STR);
-                $maj_image->bindParam(':id_user', $_SESSION['id'], PDO::PARAM_INT);
+                $maj_image->bindParam(':id_user', $_SESSION['id_user'], PDO::PARAM_INT);
                 $maj_image->bindParam(':name_img', $_FILES['image']['name'], PDO::PARAM_STR);
                 $maj_image->bindParam(':description', $_POST['description'], PDO::PARAM_STR);
                 $maj_image->execute();
@@ -114,9 +116,9 @@ class ImageSQL {
 	//Supprimer une image de la base de données
 	public function supprimer_image($id_image) {
 		global $db;
-		$supp_image = $db->('DELETE FROM images WHERE id = :id');
-		$intid = intval($id_image)
+		$supp_image = $db->prepare('DELETE FROM images WHERE id = :id');
+		$intid = intval($id_image);
 		$supp_image->bindParam(':id', $intid, PDO::PARAM_INT);
-		$supp_image->execute()
+		$supp_image->execute();
 	}
 }

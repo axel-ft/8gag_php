@@ -1,7 +1,13 @@
+body, html {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+
 #p404 {
         display: flex;
         align-items: center;
-        background: url('../images/404.jpg') no-repeat scroll;
+        background: url('404.jpg') no-repeat scroll;
         background-size: cover;
         width: 100%;
         height: 100vh;

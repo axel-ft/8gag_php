@@ -1,22 +1,20 @@
 <header id="home">
-
-
     <nav>
-        <form>
-            <input type="search" placeholder="Search">
+        <form method="post" action="index.php?p=recherche">
+            	<input type="search" placeholder="Rechercher">
+		<button type="submit"><i class="material-icons">search</i></button>
         </form>
 
         <ul class="topnav" id="myTopnav">
 
-            <li><a href="#"><i class="material-icons">backup</i> Envoyer</a></li>
+            <li><a href="index.php?p=upload"><i class="material-icons">backup</i> Envoyer</a></li>
 
-            <?php if (!$_SESSION['connected']) {
-                echo '<li ><a href = "index.php?p=connexion" > Connexion</a ></li >';
-                echo '<li><a href="#">Crée un compte</a></li>';
-            } else {
-                echo '<li><a href="index.php?p=logout">Deconnexion</a></li>';
-            }
-            ?>
+            <?php if (!$_SESSION['connected']) { ?>
+                <li><a href="index.php?p=connexion">Connexion</a></li>
+                <li><a href="index.php?p=inscription">Créer un compte</a></li>
+            <?php } else { ?>
+                <li><a href="index.php?p=logout">Deconnexion</a></li>
+            <?php } ?>
 
 
             <li><a href="#">A propos</a></li>
