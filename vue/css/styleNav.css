@@ -13,6 +13,7 @@ nav {
     height: 57px;
     z-index: 1;
     font-weight: 500;
+    box-shadow : 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
 }
 nav ul {
     list-style-type: none;
@@ -31,7 +32,7 @@ nav li {
 nav li a {
     text-decoration: none;
     font-family: 'Open Sans', sans-serif;
-    font-style: medium;
+
     font-size: 15px;
     text-decoration: none;
     color: black;
