@@ -2,9 +2,9 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
     <title>Inscription</title>
     <link rel="stylesheet" href="vue/css/inscription.css">
+    <?php require_once('vue/head_commun.php'); ?>
 </head>
 
 <body>
