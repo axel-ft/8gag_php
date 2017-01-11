@@ -3,8 +3,6 @@
 	
 	require_once('upload_image.php');
 	
-	var_dump($_SESSION['id_user']); //. $chemin . $_POST['name_img'] . $_POST['description']);
-
         if (isset($datetime) && !empty($_SERVER['REMOTE_ADDR']) && !empty($_SESSION['id_user']) && isset($chemin) && !empty($_POST['name_img']) && !empty($_POST['description'])) {
 		require_once('modele/imagesql.php');
 		$nouvelle_image = new ImageSQL();

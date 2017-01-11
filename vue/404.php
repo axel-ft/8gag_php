@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>404 - Non trouvé</title>
-	<meta charset="utf-8">
+	<?php require_once('vue/head_commun.php'); ?>
 	<link rel="stylesheet" type="text/css" href="vue/css/404.css">
 </head>
 <body>

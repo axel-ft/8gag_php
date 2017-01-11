@@ -2,8 +2,8 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Inscription</title>
+    	<title>Inscription</title>
+	<?php require_once('vue/head_commun.php'); ?>
 </head>
 
 <body>
