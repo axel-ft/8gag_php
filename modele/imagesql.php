@@ -49,7 +49,7 @@ class ImageSQL {
 		$namereq = 'WHERE name_img OR description LIKE :namereq ';
 		$user = 'WHERE id_user = :id_user ';
                 $limitreq = 'LIMIT :limit';
-                $orderby = 'ORDER BY date_upload ';
+                $orderby = 'ORDER BY date_upload DESC ';
 
 
 		if (isset($intlimit) && isset($intid_user) && !isset($intid) && $name === null) {
