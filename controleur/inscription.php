@@ -1,6 +1,16 @@
 <?php
-    session_start();
+    require_once('modele/utilisateursql.php');
+ 
+     $create = new UtilisateurSQL();
 
-
-
-    require_once('vue/inscription.php');
+if ((!empty($_POST['name']) ? trim($_POST['name']): null) && (!empty($_POST['fname']) ? trim($_POST['fname']): null) && (!empty($_POST['pseudo']) ? trim($_POST['pseudo']): null) && (!empty($_POST['mail']) ? trim($_POST['mail']): null) && !empty($_POST['password']))
+{
+   
+    $createuser = $create->inscription_compte();
+    
+} else {
+    
+    $erreur = 'Il y a eu une erreur...';
+    
+}
+require_once('vue/inscription.php');
