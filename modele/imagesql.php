@@ -16,7 +16,7 @@ class ImageSQL {
 	/*****
 	**
 	**	Récupère une ou plusieurs images.
-	**	Si $limit est défini, les images sont classées par date d'upload
+	**	Si plusieurs images sont récupérées, elles sont classées par date d'upload
 	**	$limit pour les x dernières images uploadées
 	**	$id pour récupérer une image
 	**	$id_user pour récupérer les images d'un utilisateur via son id
@@ -90,5 +90,33 @@ class ImageSQL {
 		} else {
 			return $erreur;
 		}
+	}
+
+	//Modifier les informations d'image sans modifier le fichier
+	public function maj_image() {
+                global $db;
+                $maj_image = $db->prepare('UPDATE images SET name_img = :name_img, description = :description, ip_user = :ip_user, id_user = :id_user, date_upload = :date_upload WHERE id = :id');
+                $maj_image->bindParam(':date_upload', $date_upload, PDO::PARAM_STR);
+                $maj_image->bindParam(':ip_user', $_SERVER['REMOTE_ADDR'], PDO::PARAM_STR);
+                $maj_image->bindParam(':id_user', $_SESSION['id'], PDO::PARAM_INT);
+                $maj_image->bindParam(':name_img', $_FILES['image']['name'], PDO::PARAM_STR);
+                $maj_image->bindParam(':description', $_POST['description'], PDO::PARAM_STR);
+                $maj_image->execute();
+	}
+
+	//Modifier le lien d'image dans la bdd lors d'une modification d'image
+	public function maj_image_fichier($chemin_image) {
+                $maj_link = $db->prepare('UPDATE images SET link = :chemin_image WHERE id = :id');
+                $maj_link->bindParam(':link', $chemin_image, PDO::PARAM_STR);
+                $maj_link->execute();
+	}
+	
+	//Supprimer une image de la base de données
+	public function supprimer_image($id_image) {
+		global $db;
+		$supp_image = $db->('DELETE FROM images WHERE id = :id');
+		$intid = intval($id_image)
+		$supp_image->bindParam(':id', $intid, PDO::PARAM_INT);
+		$supp_image->execute()
 	}
 }
