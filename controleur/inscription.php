@@ -10,7 +10,7 @@ if (!empty($_POST['name']) && !empty($_POST['fname']) && !empty($_POST['pseudo']
    } else {
         $erreur = "<p>Il existe déjà un compte pour cette adresse mail</p>";
    }
-} else {
+} else if (empty($_POST)) {} else {
     $erreur = '<p>Il y a eu une erreur...</p>';
 }
 
