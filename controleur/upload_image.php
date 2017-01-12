@@ -12,7 +12,7 @@
 		$mimes = array('image/png', 'image/gif', 'image/jpeg', 'image/bmp');
 
                 if (!in_array($extension, $extensions) && !in_array($mimes, $mime)) {
-                        $erreur = 'Vous devez uploader un fichier de type png, gif, jpg, jpeg';
+                        $erreur = 'Vous devez uploader un fichier de type PNG, GIF, JPG, JPEG, BMP';
                 }
 
 		finfo_close($finfo);

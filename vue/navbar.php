@@ -1,9 +1,11 @@
 <header id="home">
     <nav>
-        <form id="recherche_form" method="post" action="index.php?p=recherche">
-            	<input type="search" placeholder="Rechercher">
-		<button type="submit"><i class="material-icons">search</i></button>
+	<form id="recherche_form" method="get" action="">
+                <input type="search" placeholder="Rechercher">
+                <button type="submit"><i class="material-icons">search</i></button>
         </form>
+	
+	<a href="index.php" title="Accueil"><div id="logo_menu"></div></a>
 
         <ul class="topnav" id="myTopnav">
             <li><a class="upload" href="index.php?p=upload"><i class="material-icons">backup</i> Envoyer</a></li>

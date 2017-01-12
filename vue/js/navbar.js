@@ -12,3 +12,7 @@ window.addEventListener('scroll', function(e) {
         menu.style.boxShadow = "none";
     }
 });
+
+if (document.getElementById('userview_background')) {
+	logo = document.getElementById('logo_menu').className = "logo_dark";
+}
