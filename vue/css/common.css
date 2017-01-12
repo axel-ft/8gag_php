@@ -1,6 +1,8 @@
+/*   GENERAL   */
 html, body {
     margin: 0;
     padding: 0;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .material-icons {
@@ -20,6 +22,29 @@ html, body {
     margin-right: 4px;
     margin-top: 0px;
 }
+
+input {
+    outline: none;
+}
+
+a.button {
+        display: block;
+        text-decoration: none;
+        padding: 12px;
+        margin: 15px auto;
+        background: #dd8360;
+	color: #FFFFFF;
+        border-radius: 2px;
+}
+
+input:-moz-placeholder {
+    color: #999;
+}
+
+input::-webkit-input-placeholder {
+    color: #999;
+}
+
 
 /*   HEADER ET MENU   */
 header {
