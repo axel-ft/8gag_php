@@ -25,6 +25,12 @@ html, body {
 #userview_background {
     background: url('ps_neutral.png') repeat scroll;
 }
+#update_background {
+    background: url('inscription_background.jpg') scroll no-repeat center;
+    background-size: cover;
+    width: 100%;
+}
+
 .material-icons {
     font-family: 'Material Icons';
     font-weight: normal;
