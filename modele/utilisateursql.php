@@ -9,12 +9,13 @@ class UtilisateurSQL {
 	//Création d'un compte utilisateur
 	public function inscription_compte() {
 		global $db;
+		$password = crypt($_POST['password'], '$2a$07$302838711915bef2db65cc$');
 		$inscription = $db->prepare('INSERT INTO users(name, fname, pseudo, mail, password) VALUES (:name, :fname, :pseudo, :mail, :password)');
 		$inscription->bindParam(':name', $_POST['name'], PDO::PARAM_STR);
 		$inscription->bindParam(':fname', $_POST['fname'], PDO::PARAM_STR);
 		$inscription->bindParam(':pseudo', $_POST['pseudo'], PDO::PARAM_STR);
 		$inscription->bindParam(':mail', $_POST['mail'], PDO::PARAM_STR);
-		$inscription->bindParam(':password', $_POST['password'], PDO::PARAM_STR);
+		$inscription->bindParam(':password', $password, PDO::PARAM_STR);
 		$inscription->execute();
 	}
 	
@@ -23,7 +24,8 @@ class UtilisateurSQL {
 		global $db;
                 $connexion = $db->prepare('SELECT * FROM users WHERE mail = :mail AND password = :password');
                 $connexion->bindParam(':mail', $_POST['mail']);
-                $connexion->bindParam(':password', $_POST['password']);
+		$password = crypt($_POST['password'], '$2a$07$302838711915bef2db65cc$');
+                $connexion->bindParam(':password', $password);
                 $connexion->execute();
                 $compte = $connexion->fetchAll();
                 return $compte;
