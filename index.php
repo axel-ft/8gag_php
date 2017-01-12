@@ -19,7 +19,9 @@ require_once('modele/imagesql.php');
                 require_once('controleur/recherche.php');
 	} else if (isset($_GET['p']) AND $_GET['p'] === 'logout') {
                 require_once('controleur/logout.php'); 
-	} else if (isset($_GET['p']) AND $_GET['p'] === 'update_user') {
+	} else if (isset($_GET['p']) AND $_GET['p'] === 'desactiveruser') {
+        require_once('controleur/desactiveruser.php');
+    } else if (isset($_GET['p']) AND $_GET['p'] === 'update_user') {
         	require_once('controleur/update_user.php');
 	} else {
                 require_once('controleur/404.php');
