@@ -5,7 +5,7 @@
 	<?php require_once('vue/head_commun.php'); ?>
     <link rel="stylesheet" type="text/css" href="vue/css/userview.css">
 </head>
-<body>
+<body id="userview_background">
 
 	<?php require_once('vue/navbar.php'); ?>
     <aside id="identite">
@@ -18,7 +18,7 @@
         ?>
         <h2><?=$profil[0]['fname'].' '.$profil[0]['name']?></h2>
         <h4><?=$profil[0]['pseudo']?></h4>
-        <input type="submit" value="Modifier">
+        <a class="button" id="modifier_profil" href="index.php?p=modifier_profil">Modifier</a>
     </aside>
 
     <h3 id="h3_images">Mes images</h3>

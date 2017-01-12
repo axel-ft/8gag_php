@@ -1,8 +1,40 @@
+#userview_background {
+    background: url('bg.png') repeat scroll;
+}
+
+/* CHANGEMENT MENU */
+nav a {
+    color: #000000 !important;
+}
+
+nav li a:hover{
+    color: #dd8360 !important;
+}
+
+input[type=search] {
+    border: solid 1px #999 !important;
+}
+
+#recherche_form > button[type="submit"] {
+    background: none !important;
+    color: #000000 !important;
+    border: 1px solid #000000 !important;
+}
+
+#recherche_form > button[type="submit"]:hover {
+    background: #ededed !important;
+    color: #333333 !important;
+}
+/* FIN CHANGEMENT MENU */
+
 aside#identite {
     float: left;
     width: 30vw;
     text-align: center;
+}
 
+#modifier_profil {
+    width: 100px;
 }
 
 #images_user {
