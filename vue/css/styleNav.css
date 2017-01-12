@@ -41,6 +41,7 @@ nav li a:visited{
 
 nav li a:hover{
     color: #dd8360;
+    text-decoration: none;
 }
 
 nav li a:active{
@@ -122,7 +123,7 @@ input[type=search]:focus {
     color: #FFFFFF;
     border-radius: 50%;
     border: 1px solid #FFFFFF;
-    transition: color 0.5s, background 0.5s;   
+    transition: color 0.5s, background 0.5s;
 }
 
 #recherche_form > button[type="submit"] > i.material-icons {
