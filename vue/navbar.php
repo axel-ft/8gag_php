@@ -6,7 +6,7 @@
         </form>
 
         <ul class="topnav" id="myTopnav">
-            <li><a class="upload" ref="index.php?p=upload"><i class="material-icons">backup</i> Envoyer</a></li>
+            <li><a class="upload" href="index.php?p=upload"><i class="material-icons">backup</i> Envoyer</a></li>
 
             <?php if (!isset($_SESSION['connected'])) { ?>
                 <li><a href="index.php?p=connexion">Connexion</a></li>
