@@ -29,6 +29,20 @@ class UtilisateurSQL {
                 return $compte;
         }
 
+	//Test présence de compte par mail
+        public function mail_test() {
+                global $db;
+                $connexion = $db->prepare('SELECT * FROM users WHERE mail = :mail');
+                $connexion->bindParam(':mail', $_POST['mail']);
+                $connexion->execute();
+                $compte = $connexion->fetchAll();
+		if (count($compte) > 0) {
+			return false;
+		} else {
+                	return true;
+		}
+        }
+
 	//Récupérer un utilisateur en précisant l'id en argument. Si aucun id n'est précisé tous les utilisateurs sont retournés
 	public function get_user($id = null) {
 		global $db;
