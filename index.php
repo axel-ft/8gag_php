@@ -15,8 +15,11 @@ require_once('modele/imagesql.php');
 	} else if (isset($_GET['p']) AND $_GET['p'] === 'mon_compte') {
                 require_once('controleur/userview.php');
 	} else if (isset($_GET['p']) AND $_GET['p'] === 'logout') {
-                require_once('controleur/logout.php');
-        } else {
+                require_once('controleur/logout.php');}
+    else if (isset($_GET['p']) AND $_GET['p'] === 'update_user') {
+        require_once('controleur/update_user.php');
+
+	} else {
                 require_once('controleur/404.php');
         }
 
