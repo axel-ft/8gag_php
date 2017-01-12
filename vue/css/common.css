@@ -82,8 +82,6 @@ nav {
 }
 
 nav ul {
-    position: relative;
-    top: 5px;
     list-style-type: none;
     display: flex;
     justify-content: flex-end;
@@ -93,6 +91,8 @@ nav ul {
 
 nav li {
     margin-right: 40px;
+    position: relative;
+    top: 5px;
 } 
 
 nav li a { 
@@ -159,7 +159,6 @@ input[type=search] {
     border: solid 1px #ccc;
     padding: 6px 10px 6px 10px;
     width: 85px;
-    font-family: 'Open Sans', sans-serif;
     -webkit-box-sizing: content-box;
     font-size: 100%;
     -webkit-border-radius: 10em;
