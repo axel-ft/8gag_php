@@ -10,20 +10,21 @@
 	<?php require_once('vue/navbar.php'); ?>
     <aside id="identite">
         <?php
-        if (!empty($profil[0]['avatar'])) {
-            echo '<div id="avatar"><img src="'.$profil[0]['avatar'].'" alt="avatar"></div>';
-        } else {
-            echo '<div id="avatar"><img src="vue/css/default.jpg" alt="avatar"></div>';
-        }
+
+            echo '<div id="avatar"><img src="http://gravatar.com/avatar/'.md5($profil[0]['mail']).'?d=identicon&s=230" alt="avatar"></div>';
+
         ?>
         <h2><?=$profil[0]['fname'].' '.$profil[0]['name']?></h2>
         <h4><?=$profil[0]['pseudo']?></h4>
-        <a class="button" id="modifier_profil" href="index.php?p=modifier_profil">Modifier</a>
+        <a class="button" id="modifier_profil" href="index.php?p=update_user">Modifier</a>
     </aside>
 
     <h3 id="h3_images">Mes images</h3>
     <section id="images_user">
                 <?php
+                    if (!empty($userimgview)) {
+
+
                     foreach ($userimgview as $imgview => $userimgviewer) {
 
                     //Protection contre XSS
@@ -34,30 +35,12 @@
                 <img class="img_post" alt="" src="<?= $userimgviewer['link'] ?>">
                 <h3 class="titre_post"><?= $userimgviewer['name_img'] ?></h3>
             </div>
-                <?php } ?>
+                <?php } }
+                    else {
+                        echo "Vous n'avez pas de photo";
+                    }
+                    ?>
     </section>
-
-
-
-<form id="votre_compte">
-    <fieldset>
-        <h2>Votre Compte</h2>
-            <?php if (isset($_SESSION['connected']) && $_SESSION['connected']) { ?>
-                <h2>Bienvenue <?=$profil[0]['fname']?> </h2>
-                <h3> Vos Informations : </h3>
-
-                <p>Nom : <?=$profil[0]['name']?><br />
-      	        Prenom : <?=$profil[0]['fname']?><br />
-            	Pseudo : <?=$profil[0]['pseudo']?><br>
-            	Email : <?=$profil[0]['mail']?></p>
-            <?php } else { ?>
-                <p>Il y a une erreur</p>
-            <?php } ?>
-        <a href="#"><button type="button" class="action-button"> Modifier </button></a>
-        <a href="#"><button type="button" class="action-button"> Vos Photos</button></a>
-        <a href="index.php?p=logout"><button type="button" class="action-button"> Déconnexion </button></a>
-    </fieldset>
-</form>
 
 </body>
 </html>
