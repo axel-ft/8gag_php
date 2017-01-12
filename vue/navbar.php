@@ -1,14 +1,14 @@
 <header id="home">
     <nav>
-        <form method="post" action="index.php?p=recherche">
+        <form id="recherche_form" method="post" action="index.php?p=recherche">
             	<input type="search" placeholder="Rechercher">
 		<button type="submit"><i class="material-icons">search</i></button>
         </form>
 
         <ul class="topnav" id="myTopnav">
-            <li><a href="index.php?p=upload"><i class="material-icons">backup</i> Envoyer</a></li>
+            <li><a class="upload" href="index.php?p=upload"><i class="material-icons">backup</i> Envoyer</a></li>
 
-            <?php if (!$_SESSION['connected']) { ?>
+            <?php if (!isset($_SESSION['connected'])) { ?>
                 <li><a href="index.php?p=connexion">Connexion</a></li>
                 <li><a href="index.php?p=inscription">Créer un compte</a></li>
             <?php } else { ?>

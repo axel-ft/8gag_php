@@ -1,0 +1,46 @@
+html{
+    font-family: 'Open Sans', sans-serif;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+.col-md-6 {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+#avatar {
+    /*background: url(usericon.png) scroll no-repeat;
+    background-size: cover;*/
+    float: left;
+    font-family: 'Open Sans', sans-serif;
+    overflow: hidden;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 20px;
+    width: 229px;
+    height: 230px;
+    margin-left: 70px;
+    margin-top: 20px;
+}
+#identite {
+    margin-left: 70px;
+}
+#images {
+    margin-left: 90px;
+}
+.btn--primary {
+    border-color: #303030;
+    background-color: #303030;
+    display: inline-block;
+    padding: 12px 28px 11px 23px;
+    color: #fff;
+    border: 2px solid transparent;
+    border-radius: 0;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    margin-left: 70px;
+    margin-top: 70px;
+}

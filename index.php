@@ -1,6 +1,8 @@
 <?php
 
 require_once('modele/dbconn.php');
+require_once('modele/utilisateursql.php');
+require_once('modele/imagesql.php');
 
 	if (!isset($_GET['p']) OR $_GET['p'] === 'index') {
     		require_once('controleur/index.php');

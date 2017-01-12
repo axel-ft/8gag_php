@@ -3,15 +3,64 @@
 <head>
     	<title>Votre Compte</title>
 	<?php require_once('vue/head_commun.php'); ?>
+    <link rel="stylesheet" href="vue/css/userview.css">
 </head>
 <body>
 
 	<?php require_once('vue/navbar.php'); ?>
 
-<form method="post" id="msform" action="#">
+
+
+
+
+        <?php if (isset($_SESSION['connected']) && $_SESSION['connected']) { ?>
+        <section class="row">
+
+            <?php
+            if (!empty($profil[0]['avatar'])) {
+
+                echo '<div class="col-md-6" id="avatar"><img src="'.$profil[0]['avatar'].'" alt="avatar"></div>';
+            } else {
+                echo '<div class="col-md-6" id="avatar"><img src="vue/css/default.jpg" alt="avatar"></div>';
+            }
+
+
+            ?>
+
+                <div class="col-md-6" id="images">
+                    <h3>Images de <?=$profil[0]['fname']?></h3>
+                    <br>
+                    <br>
+
+                </div>
+
+        </section>
+
+            <section class="row">
+                <div class="col-md-6" id="identite">
+                <h2><?=$profil[0]['fname'].' '.$profil[0]['name']?></h2>
+                <h4><?=$profil[0]['pseudo']?></h4>
+            </div>
+            </section>
+        </div>
+            <section class="row">
+                <div class="col-md-6">
+                    <input type="submit" value="Modifier" class="submit-btn btn--primary">
+                </div>
+            </section>
+
+            <br><br><br><br><br><br><br><br><br><br>
+        <?php } ?>
+
+
+
+
+
+
+
     <fieldset>
         <h2>Votre Compte</h2>
-        <?php if ($_SESSION['connected'] === true) { ?>
+        <?php if (isset($_SESSION['connected']) && $_SESSION['true']) { ?>
             <h2>Bienvenue <?=$profil[0]['fname']?> </h2>
 
       	        <h3> Vos Informations : </h3>

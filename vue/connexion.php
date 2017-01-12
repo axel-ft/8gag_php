@@ -3,11 +3,12 @@
 <head>
     	<title>Connexion</title>
 	<?php require_once('vue/head_commun.php'); ?>
+    <link rel="stylesheet" href="vue/css/inscription.css">
 </head>
 <body>
 	<?php require_once('vue/navbar.php'); ?>
 
-<form action="" method="post">
+<form action="" method="post" id="msform">
     <fieldset>
         <h3>Connection</h3>
         <?php if (isset($erreur)) echo $erreur; ?>
