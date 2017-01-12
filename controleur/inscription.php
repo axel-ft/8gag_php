@@ -1,5 +1,6 @@
 <?php
     require_once('modele/utilisateursql.php');
+    require_once('vue/inscription.php');
  
      $create = new UtilisateurSQL();
 
@@ -10,7 +11,6 @@ if ((!empty($_POST['name']) ? trim($_POST['name']): null) && (!empty($_POST['fna
     
 } else {
     
-    $erreur = 'Il y a eu une erreur...';
+    $erreur = '<p>Il y a eu une erreur...</p>';
     
 }
-require_once('vue/inscription.php');

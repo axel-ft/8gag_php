@@ -1,0 +1,31 @@
+html{
+    font-family: 'Open Sans', sans-serif;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+.col-md-6 {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+#avatar {
+    /*background: url(usericon.png) scroll no-repeat;
+    background-size: cover;*/
+    float: left;
+    font-family: 'Open Sans', sans-serif;
+    overflow: hidden;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 20px;
+    width: 229px;
+    height: 230px;
+    margin-left: 70px;
+    margin-top: 20px;
+}
+#identite {
+    margin-left: 70px;
+}
+#images {
+    margin-left: 70px;
+}

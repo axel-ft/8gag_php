@@ -3,17 +3,18 @@
 
 <head>
     <title>Inscription</title>
-    <link rel="stylesheet" href="vue/css/inscription.css">
     <?php require_once('vue/head_commun.php'); ?>
+    <link rel="stylesheet" href="vue/css/inscription.css">
 </head>
-
+<?php
+require_once ('vue/navbar.php');
+?>
 <body>
-    <div id="container"></div>
 
-    <form action="" method="post">
+    <form action="" method="post" id="msform">
         <fieldset>
             <h3>Inscription</h3>
-            <?php if (isset($erreur)) echo '<p>' . $erreur . '</p>'; ?>
+            <?php if (isset($erreur)) echo $erreur; ?>
                 <input type="text" name="name" placeholder="name">
                 <input type="text" name="fname" placeholder="firstname">
                 <input type="text" name="pseudo" placeholder="pseudo">
