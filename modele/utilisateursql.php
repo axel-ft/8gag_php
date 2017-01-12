@@ -70,7 +70,7 @@ class UtilisateurSQL {
 		global $db;
 		$desactiver = $db->prepare('UPDATE users SET active = :active WHERE id = :id');
 		$desactiver->bindParam(':active', 0, PDO::PARAM_INT);
-		$desactiver->bindParam(':id', $_SESSION['id'], PDO::PARAM_INT);
+		$desactiver->bindParam(':id', $_SESSION['id_user'], PDO::PARAM_INT);
 		$desactiver->execute();
 	}
 
@@ -82,7 +82,7 @@ class UtilisateurSQL {
 		$maj->bindParam(':fname', $_POST['fname'], PDO::PARAM_STR);
 		$maj->bindParam(':pseudo', $_POST['pseudo'], PDO::PARAM_STR);
 		$maj->bindParam(':mail', $_POST['mail'], PDO::PARAM_STR);
-		$maj->bindParam(':id', $_SESSION['id'], PDO::PARAM_INT);
+		$maj->bindParam(':id', $_SESSION['id_user'], PDO::PARAM_INT);
 		$maj->execute();
 	}
 
@@ -91,7 +91,7 @@ class UtilisateurSQL {
 		global $db;
 		$majpwd = $db->prepare('UPDATE users SET password = :password WHERE id = :id');
 		$majpwd->bindParam(':password', $_POST['password'], PDO::PARAM_STR);
-		$majpwd->bindParam(':id', $_SESSION['id'], PDO::PARAM_INT);
+		$majpwd->bindParam(':id', $_SESSION['id_user'], PDO::PARAM_INT);
 		$majpwd->execute();
 	}
 }
