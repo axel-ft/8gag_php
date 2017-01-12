@@ -20,4 +20,4 @@
         </ul>
     </nav>
 </header>
-
+<script type="text/javascript" src="vue/js/navbar.js"></script>
