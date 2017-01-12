@@ -55,21 +55,18 @@ class UtilisateurSQL {
         		$get_users->execute();
         		$users = $get_users->fetchAll();
 			return $users;
-			echo 'hello';
 		} else {
 			$get_user = $db->prepare('SELECT * FROM users');
                         $get_user->execute();
                         $user = $get_user->fetchAll();
 			return $user;
-			echo 'hello';
 		}
 	}
 
 	//Désactiver le compte utilisateur connecté
 	public	function desactiver_compte() {
 		global $db;
-		$desactiver = $db->prepare('UPDATE users SET active = :active WHERE id = :id');
-		$desactiver->bindParam(':active', 0, PDO::PARAM_INT);
+		$desactiver = $db->prepare('UPDATE users SET active = 0 WHERE id = :id');
 		$desactiver->bindParam(':id', $_SESSION['id_user'], PDO::PARAM_INT);
 		$desactiver->execute();
 	}
