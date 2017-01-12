@@ -33,15 +33,6 @@ h1 {
 	border-radius: 2px;
 }
 
-.button {
-	display: block;
-	text-decoration: none;
-	padding: 12px;
-	margin: 15px auto;
-	background: #dd8360;
-	border-radius: 2px;
-}
-
 .button#start_upload {
 	width: 130px;
 }

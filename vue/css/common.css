@@ -4,7 +4,24 @@ html, body {
     padding: 0;
     font-family: 'Open Sans', sans-serif;
 }
-
+#connexion_background {
+    background: url('connexion_background.jpg') scroll no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+#inscription_background {
+    background: url('inscription_background.jpg') scroll no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+#upload_background {
+    background: url('upload_background.jpg') scroll no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
 .material-icons {
     font-family: 'Material Icons';
     font-weight: normal;
@@ -73,10 +90,14 @@ nav li {
 
 nav li a { 
     text-decoration: none;
-    font-family: 'Open Sans', sans-serif;
     font-size: 15px;
     text-decoration: none;
     color: #FFFFFF;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -ms-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    transition: all ease 0.5s;
 } 
 
 nav li a:visited{
@@ -85,6 +106,11 @@ nav li a:visited{
 
 nav li a:hover{
     color: #dd8360;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -ms-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+    transition: all ease 0.5s;
 }  
 
 nav li a:active{
@@ -103,8 +129,7 @@ nav a:after {
 
 nav a:hover:after {
     width: 100%;
-    background: white;
-    color: white;
+    background: #f9bdac;
 }
 
 a:visited {

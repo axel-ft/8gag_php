@@ -10,7 +10,7 @@
 require_once ('vue/navbar.php');
 ?>
 
-    <body>
+    <body id="inscription_background">
 
         <form action="" method="post" id="msform">
             <fieldset>
