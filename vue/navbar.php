@@ -2,8 +2,7 @@
     <nav>
         <form id="recherche_form" method="post" action="index.php?p=recherche">
             	<input type="search" placeholder="Rechercher">
-		    <i class="material-icons">search</i>
-
+		<button type="submit"><i class="material-icons">search</i></button>
         </form>
 
         <ul class="topnav" id="myTopnav">
