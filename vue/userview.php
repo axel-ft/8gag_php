@@ -11,7 +11,7 @@
     <aside id="identite">
         <?php
 
-            echo '<div id="avatar"><img src="http://gravatar.com/avatar/'.md5($profil[0]['mail']).'?d=identicon&s=230" alt="avatar"></div>';
+            echo '<div id="avatar"><img src="https://gravatar.com/avatar/'.md5($profil[0]['mail']).'?d=identicon&s=230" alt="avatar"></div>';
 
         ?>
         <h2><?=$profil[0]['fname'].' '.$profil[0]['name']?></h2>

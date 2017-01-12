@@ -22,11 +22,8 @@
                 <input type="pseudo" placeholder="Pseudo" id="pseudo" name="pseudo" value="<?php echo $updateuser[0]['pseudo'] ?>">
                 <input type="mail" placeholder="Mail" id="mail" name="mail" value="<?php echo $updateuser[0]['mail'] ?>">
                 <input type="password" placeholder="Remplir pour modifier le password" id="password" name="password" >
-                <input type="password" placeholder="Confirmer votre password" id="pwdconfirm" name="pwdconfirm" >
-
-
-            <a href="#" class="button">Modifier</a>
-
+                <input type="password" placeholder="Confirmer votre password" id="pwdconfirm" name="pwdconfirm">
+		<input type="submit" class="button" value="Modifier">
         </fieldset>
     </form>
 

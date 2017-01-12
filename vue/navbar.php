@@ -15,7 +15,7 @@
                 <li><a href="index.php?p=inscription">Créer un compte</a></li>
             <?php } else { ?>
                 <li><a href="index.php?p=mon_compte">Mon compte</a></li>
-                <li><a href="index.php?p=logout">Deconnexion</a></li>
+                <li><a href="index.php?p=logout">Déconnexion</a></li>
             <?php } ?>
 
             <li><a href="#">A propos</a></li>

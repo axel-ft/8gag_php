@@ -8,12 +8,11 @@ $updateuser = $update->get_user($_SESSION['id_user']);
 
 
 if (!empty($_POST['name']) && !empty($_POST['fname']) && !empty($_POST['pseudo']) && !empty($_POST['mail'])) {
-    $modif = new UtilisateurSQL();
-    $modif->maj_compte();
+    $update->maj_compte();
     if (empty($_POST['password']) && empty($_POST['pwdconfirm'])) {
         header('Location: index.php?p=mon_compte');
     } else if (!empty($_POST['password']) && !empty($_POST['pwdconfirm']) && $_POST['password'] === $_POST['pwdconfirm']) {
-        $modif->maj_password();
+        $update->maj_password();
         header('Location: index.php?p=mon_compte');
     } else {
         echo "<h3>Tous les champs ne sont pas remplis ou les mots de passes ne correspondent pas. Vous pouvez laisser le champ mot de passe vide pour conserver votre mot de passe actuel</h3>";

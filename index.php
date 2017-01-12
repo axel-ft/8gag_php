@@ -4,6 +4,7 @@ require_once('modele/dbconn.php');
 require_once('modele/utilisateursql.php');
 require_once('modele/imagesql.php');
 
+
 	if (!isset($_GET['p']) OR $_GET['p'] === 'index') {
     		require_once('controleur/index.php');
 	} else if (isset($_GET['p']) AND $_GET['p'] === 'connexion') {
@@ -14,11 +15,12 @@ require_once('modele/imagesql.php');
                 require_once('controleur/upload_nouvelle_image.php');
 	} else if (isset($_GET['p']) AND $_GET['p'] === 'mon_compte') {
                 require_once('controleur/userview.php');
+	} else if (isset($_GET['p']) AND $_GET['p'] === 'recherche') {
+                require_once('controleur/recherche.php');
 	} else if (isset($_GET['p']) AND $_GET['p'] === 'logout') {
                 require_once('controleur/logout.php'); 
 	} else if (isset($_GET['p']) AND $_GET['p'] === 'update_user') {
-        require_once('controleur/update_user.php');
-
+        	require_once('controleur/update_user.php');
 	} else {
                 require_once('controleur/404.php');
         }

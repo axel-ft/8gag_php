@@ -89,8 +89,9 @@ class UtilisateurSQL {
 	//Mettre la jour le mot de passe de l'utilisateur
 	public function maj_password() {
 		global $db;
+		$password = crypt($_POST['password'], '$2a$07$302838711915bef2db65cc$');
 		$majpwd = $db->prepare('UPDATE users SET password = :password WHERE id = :id');
-		$majpwd->bindParam(':password', $_POST['password'], PDO::PARAM_STR);
+		$majpwd->bindParam(':password', $password, PDO::PARAM_STR);
 		$majpwd->bindParam(':id', $_SESSION['id_user'], PDO::PARAM_INT);
 		$majpwd->execute();
 	}
