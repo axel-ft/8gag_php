@@ -24,11 +24,7 @@
     margin: 0 0 3px 10px;
 }
 
-.form fieldset:not(:first-of-type) {
-    display: none;
-}
-
-.form input, .form textarea {
+.form input, .form textarea, #upload-label {
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 3px;
@@ -40,18 +36,6 @@
     font-size: 13px;
 }
 
-.form .action-button {
-    width: 100px;
-    background: #27AE60;
-    font-weight: bold;
-    color: white;
-    border: 0 none;
-    border-radius: 1px;
-    cursor: pointer;
-    padding: 10px 5px;
-    margin: 10px 5px;
-}
-
 #desactiver {
     background-color: #CA3535;
     max-width: 185px;
@@ -61,4 +45,32 @@
 #modif_avatar {
     margin: 20px auto;
     width: 230px;
+}
+
+#file-upload {
+	position: relative;
+}
+
+#image {
+	z-index: 2;
+	opacity: 0;
+}
+
+#upload-label {
+	background: #375975;
+	color: #FFFFFF;
+	font-size: 18px;
+	position: absolute;
+	top: 0;
+    	height: 53px;
+    	width: 100%;
+    	text-align: center;
+	margin: 0;
+	padding: 13px;
+	cursor: pointer;
+}
+
+.filepath {
+	margin-top: 0;
+	text-align: center;
 }

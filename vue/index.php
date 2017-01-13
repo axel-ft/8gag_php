@@ -5,7 +5,8 @@
 	<?php require_once('vue/head_commun.php'); ?>
 	<link rel="stylesheet" type="text/css" href="vue/css/index.css">
 </head>
-<body id="main_background">
+<body>
+<div id="main_background">
 	<?php require_once('vue/navbar.php'); ?>
 
 	<section id="bienvenue">
@@ -17,6 +18,7 @@
 			<div id="button_div"><a class="button" id="start_upload" href="index.php?p=upload">Démarrer l'envoi</a><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OU&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><a class="button" id="discover" href="#dernieres_images">Découvrir les 5 dernières images uploadées</a></div>
 		</div>
 	</section>
+</div>
 
 	<section id="section_dernieres_images">
 		<h2>Les 5 dernières images uploadées</h2>
