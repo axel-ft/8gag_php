@@ -16,10 +16,12 @@ require_once ('vue/navbar.php');
             <fieldset>
                 <h3>Inscription</h3>
                 <?php if (isset($erreur)) echo $erreur; ?>
+                <?php if (isset($succes)) echo $succes; ?>
                     <input type="text" name="name" placeholder="Nom">
                     <input type="text" name="fname" placeholder="Prénom">
                     <input type="text" name="pseudo" placeholder="Pseudo">
                     <input type="password" name="password" placeholder="Mot de passe">
+                    <input type="password" name="pwdconfirm" placeholder="Confirmation du mot de passe">
                     <input type="mail" name="mail" placeholder="E-mail">
                     <button type="submit" class="button">Envoyer !</button>
             </fieldset>

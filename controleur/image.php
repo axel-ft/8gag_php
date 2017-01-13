@@ -2,7 +2,7 @@
 
 if (!empty($_GET['image'])) {
 	$imgreq = new ImageSQL();
-	$img_array = imgreq->get_images(null, null, null, $_GET['images']);
+	$img_array = imgreq->get_images(null, null, null, $_GET['image']);
 	if (isset($img_array) && count(img_array) > 0) {
 		$image = $img_array[0];
 	} else {

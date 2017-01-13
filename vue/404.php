@@ -8,9 +8,9 @@
 <body>
 	<div id="p404">
 		<div id="t404">
-			<h1>404 - Page introuvable</h1>
-			<h3>Oups ! la page que vous avez demandé est introuvable&hellip;</h3>
-			<a href="index.php" class="bouton">Retour à l'accueil</a>
+			<h2>404 - Page introuvable</h2>
+			<h4>Oups ! La page que vous avez demandé est introuvable&hellip;</h4>
+			<a href="index.php" class="button">Retour à l'accueil</a>
 		</div>
 	</div>
 </body>
