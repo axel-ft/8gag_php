@@ -69,6 +69,9 @@ h6 {
 
 #userview_background {
 	background: url('ps_neutral.png') repeat scroll;
+	display: initial;
+	flex-direction: initial;
+	justify-content: initial;
 }
 
 .material-icons {
@@ -232,7 +235,7 @@ a:visited {
 	background: url('../images/8gag_dark.svg') no-repeat scroll;
 	position: absolute;
         left: calc(50vw - 30px);
-        top: 6px;
+        top: 3px;
         width: 60px;
         height: 60px;
 }
@@ -299,11 +302,6 @@ input[type=search]:focus {
 	outline: none;
 }
 
-.supprimer > i{
-	position: relative;
-	top: 6px;
-}
-
 /* AFFICHAGE DES IMAGES */
 .post {
         padding: .5vw;
@@ -325,6 +323,7 @@ input[type=search]:focus {
 	margin: .5vw;
 	overflow: hidden;
 	height: 400px;
+	background: black;
 }
 
 .titre_post {

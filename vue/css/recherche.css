@@ -2,6 +2,10 @@ nav a {
     color: #000000 !important;
 }
 
+nav li a:hover{
+    color: #dd8360 !important;
+}
+
 #recherche_form > button[type="submit"] {
     background: none !important;
     color: #000000 !important;
