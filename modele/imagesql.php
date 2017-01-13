@@ -100,7 +100,7 @@ class ImageSQL {
                 $maj_image->bindParam(':date_upload', $date_upload, PDO::PARAM_STR);
                 $maj_image->bindParam(':ip_user', $_SERVER['REMOTE_ADDR'], PDO::PARAM_STR);
                 $maj_image->bindParam(':id_user', $_SESSION['id_user'], PDO::PARAM_INT);
-                $maj_image->bindParam(':name_img', $_FILES['image']['name'], PDO::PARAM_STR);
+                $maj_image->bindParam(':name_img', $_POST['name_img'], PDO::PARAM_STR);
                 $maj_image->bindParam(':description', $_POST['description'], PDO::PARAM_STR);
                 $maj_image->execute();
 	}
