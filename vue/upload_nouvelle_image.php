@@ -11,9 +11,10 @@
         <form action="" method="POST" enctype="multipart/form-data" class="form">
             <fieldset>
                 <h3>Uploader une image</h3>
-                <?php if (isset($erreurupload)) echo $erreurupload . '<br>';
-		if (isset($erreur)) echo $erreur . '<br>';
-		if (isset($succes)) { echo $succes . '<br>'; } else if (isset($echec)) { echo $echec . '<br>' ;} ?>
+                <?php if (isset($erreurupload)) echo $erreurupload;
+		if (isset($erreur)) echo $erreur;
+		if (isset($erreurremp)) echo $erreurremp;
+		if (isset($succes)) { echo $succes; } else if (isset($echec)) { echo $echec; } ?>
                 <label for="name_img">Nom de l'image  </label>
                 <input type="text" name="name_img" id="name_img"><br>
                 <label for="description" value="">Description  </label>
