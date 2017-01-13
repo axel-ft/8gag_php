@@ -1,6 +1,5 @@
 <?php
 
-
 require_once ('modele/utilisateursql.php');
 $utilisateur = new UtilisateurSQL();
 if (!empty($_POST['mail']) && !empty($_POST['password'])) {
@@ -10,11 +9,11 @@ if (!empty($_POST['mail']) && !empty($_POST['password'])) {
         $_SESSION['id_user'] = $compte[0]['id'];
         header('Location: index.php?p=mon_compte');
 
-    } elseif (intval($compte[0]['active']) === 0) {
+    } elseif (count($compte)>0 && intval($compte[0]['active']) === 0) {
         $erreur = '<p>Compte désactivé</p>';
     }
     else{
-        $erreur = '<p>Identifiant incorrect</p>';
+        $erreur = '<p>Identifiants incorrects</p>';
     }
 
 }

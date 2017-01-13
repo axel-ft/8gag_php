@@ -33,7 +33,7 @@
                 				<a href="index.php?p=deleteimg&image=<?=$userimgviewer['id']?>" class="button supprimer"><i class="material-icons">clear</i></a>
             				</div>
                 <?php 		} 
-			} else { echo "Vous n'avez pas de photo"; }
+			} else { echo '<div id="no_images"><h4>Vous n\'avez pas d\'images</h4></div>'; }
                 ?>
     </section>
 </body>

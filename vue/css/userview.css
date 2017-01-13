@@ -49,6 +49,7 @@ aside#identite {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 10px;
 }
 
 #avatar {
@@ -89,4 +90,19 @@ aside#identite {
 	text-overflow: ellipsis;
 	max-width: 215px;
 	overflow: hidden;
+}
+
+#no_images {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	background: url('no_images.jpg') no-repeat scroll center;
+	width:90%;
+	height: 74.9vh;
+}
+
+#no_images > h4 {
+	color: #FFFFFF;
+	background: rgba(0,0,0,0.5);
+	padding: 50px 0;
 }
