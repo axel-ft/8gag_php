@@ -34,6 +34,7 @@
             <div class="post">
                 <img class="img_post" alt="" src="<?= $userimgviewer['link'] ?>">
                 <h3 class="titre_post"><?= $userimgviewer['name_img'] ?></h3>
+                <a href="index.php?p=deleteimg&image=<?=$userimgviewer['id']?>" class="button supprimer"><i class="material-icons">clear</i>Supprimer l'image</a>
             </div>
                 <?php } }
                     else {

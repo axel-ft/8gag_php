@@ -234,3 +234,8 @@ input[type=search]:focus {
 #recherche_form > button[type="submit"]:focus {
     outline: none;
 }
+
+.supprimer > i{
+    position: relative;
+    top: 6px;
+}
