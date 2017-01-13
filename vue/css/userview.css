@@ -31,6 +31,9 @@ aside#identite {
     float: left;
     width: 30vw;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #modifier_profil {

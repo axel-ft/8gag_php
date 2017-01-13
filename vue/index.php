@@ -14,9 +14,7 @@
 			<h2>Partagez vos images</h2>
 			<p>Vous pouvez envoyer vos images sur ce site pour les partager. Un lien direct vous est donné à l'issue de l'upload.<br>
 			Dans la limite de 10 Mo, les formats JPEG, JPG, PNG, BMP, et GIF sont acceptés.</p>
-			<a class="button" id="start_upload" href="index.php?p=upload">Démarrer l'envoi</a>
-			<p>OU</p>
-			<a class="button" id="discover" href="#dernieres_images">Découvrir les 5 dernières images uploadées</a>
+			<div id="button_div"><a class="button" id="start_upload" href="index.php?p=upload">Démarrer l'envoi</a><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OU&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><a class="button" id="discover" href="#dernieres_images">Découvrir les 5 dernières images uploadées</a></div>
 		</div>
 	</section>
 

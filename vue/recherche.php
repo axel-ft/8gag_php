@@ -35,5 +35,10 @@
 
 		</div>
 	</section>
+	<script type="text/javascript">
+		if (document.getElementById('aucun_res')) {
+        		document.getElementById('navbar_light').id = "navbar_dark";
+		}
+	</script
 </body>
 </html>

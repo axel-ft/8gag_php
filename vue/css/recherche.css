@@ -13,45 +13,26 @@ nav a {
     color: #333333 !important;
 }
 
+#navbar_dark button[type="submit"] {
+    background: none !important;
+    color: #FFFFFF !important;
+    border: 1px solid #FFFFFF !important;
+}
+
+#navbar_dark button[type="submit"]:hover {
+    background: #ededed !important;
+    color: #333333 !important;
+}
+
 #recherche_background {
 	background: url('bg.png') repeat scroll;
 }
 
 #resultats {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap; 
-	justify-content: center;
-}
-
-.post {
-	padding: .5vw;
-  	flex-direction: column;
-	display: flex;
-}
-
-.post h3 {
-	text-align: center;
-}
-
-.description_post {
-	text-align: justify;
-	text-align-last: center;
-}
-
-.post div { 
-  display: flex;
-  flex-direction: column;
-  justify-content: center; 
-  width: 400px; 
-  margin: .5vw; 
-  overflow: hidden;
-  height: 400px;
-}
-
-.post div img { 
-  height: auto;
-  width: 100%; 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 #aucun_res {
@@ -75,15 +56,10 @@ nav a {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: center;
 }
 
 #aucun_res > div > h2 {
 	margin: 20px auto;
 	font-size: 60px;
-}
-
-@media screen and (max-width: 400px) {
-  .post div { margin: 0; }
-  .post { padding: 0; }
-  
 }

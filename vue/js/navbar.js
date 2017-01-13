@@ -14,5 +14,5 @@ window.addEventListener('scroll', function(e) {
 });
 
 if (document.getElementById('userview_background') || document.getElementById('recherche_background')) {
-	logo = document.getElementById('logo_menu').id = "logo_dark";
+	document.getElementById('logo_menu').id = "logo_dark";
 }

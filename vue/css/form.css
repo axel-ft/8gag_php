@@ -1,42 +1,46 @@
-body {
-    font-family: 'Open Sans', sans-serif;
-
-}
-#msform {
-    width: 400px;
+.form {
+    min-width: 400px;
+    width: 60vw;
     margin: 50px auto;
     text-align: center;
     position: relative;
+    top: -30px;
 }
-#msform fieldset {
+
+.form fieldset {
     background: white;
-    border: 0 none;
+    border: none;
     border-radius: 3px;
     box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
     padding: 20px 30px;
     box-sizing: border-box;
     width: 80%;
-    margin: 0 10%;
-    margin-top: 90px;
-
-    position: relative;
+    margin: 0 auto;
 }
 
-#msform fieldset:not(:first-of-type) {
+.form fieldset label {
+    display: block;
+    text-align: left;
+    margin: 0 0 3px 10px;
+}
+
+.form fieldset:not(:first-of-type) {
     display: none;
 }
-#msform input, #msform textarea {
+
+.form input, .form textarea {
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 3px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     width: 100%;
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
     color: #2C3E50;
     font-size: 13px;
 }
-#msform .action-button {
+
+.form .action-button {
     width: 100px;
     background: #27AE60;
     font-weight: bold;
@@ -46,4 +50,15 @@ body {
     cursor: pointer;
     padding: 10px 5px;
     margin: 10px 5px;
+}
+
+#desactiver {
+    background-color: #CA3535;
+    max-width: 185px;
+    margin: 20px auto 0 auto;
+}
+
+#modif_avatar {
+    margin: 20px auto;
+    width: 230px;
 }

@@ -3,13 +3,13 @@
 <head>
         <title>Uploader une image</title>
 	<?php require_once('vue/head_commun.php'); ?>
-    <link rel="stylesheet" href="vue/css/inscription.css">
+	<link type="text/css" rel="stylesheet" href="vue/css/form.css">
 </head>
 <body id="upload_background">
 	<?php require_once('vue/navbar.php');?>
 
 
-        <form action="" method="POST" enctype="multipart/form-data" id="msform">
+        <form action="" method="POST" enctype="multipart/form-data" class="form">
             <fieldset>
                 <h3>Uploader une image</h3>
                 <?php if (isset($erreurupload)) echo $erreurupload . '<br>';?>
@@ -21,7 +21,7 @@
                 <input type="file" name="image" id="image"><br>
 		<?php if (isset($erreur)) echo $erreur . '<br>';
 		if (isset($succes)) {echo $succes . '<br>';} else if (isset($echec)) {echo $echec . '<br>';} ?>
-                <input type="submit" name="ajouter" id="ajouter" value="Ajouter">
+                <button type="submit" name="ajouter" class="button" id="ajouter">Ajouter</button>
             </fieldset>
         </form>
 
