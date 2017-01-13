@@ -12,7 +12,6 @@ class ImageSQL {
         	$image_ins->bindParam(':name_img', $_POST['name_img'], PDO::PARAM_STR);
         	$image_ins->bindParam(':description', $_POST['description'], PDO::PARAM_STR);
         	$image_ins->execute();
-		print_r($db->errorInfo());
 	}
 	
 	/*****

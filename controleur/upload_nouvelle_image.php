@@ -4,7 +4,6 @@
 	require_once('upload_image.php');
 	
         if (isset($datetime) && !empty($_SERVER['REMOTE_ADDR']) && !empty($_SESSION['id_user']) && isset($chemin) && !empty($_POST['name_img']) && !empty($_POST['description'])) {
-		require_once('modele/imagesql.php');
 		$nouvelle_image = new ImageSQL();
 		$nouvelle_image->insert_image($datetime, $chemin);
         } else if (empty($_POST)) {} else {

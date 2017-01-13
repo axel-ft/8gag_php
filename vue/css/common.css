@@ -159,13 +159,18 @@ a:visited {
 	background: url('../images/8gag_light.svg') no-repeat scroll;
 	position: absolute;
 	left: calc(50vw - 40px);
-	top: 10px;
-	width: 80px;
-	height: 80px;
+	top: 3px;
+	width: 60px;
+	height: 60px;
 }
 
-.logo_dark {
-	background: url('../images/8gag_dark.svg') no-repeat scroll !important;
+#logo_dark {
+	background: url('../images/8gag_dark.svg') no-repeat scroll;
+	position: absolute;
+        left: calc(50vw - 30px);
+        top: 3px;
+        width: 60px;
+        height: 60px;
 }
 
 input::-webkit-search-decoration,

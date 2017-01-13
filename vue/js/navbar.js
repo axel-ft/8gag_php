@@ -1,7 +1,7 @@
 var menu = document.getElementsByTagName('nav')[0];
 window.addEventListener('scroll', function(e) {
     if (window.pageYOffset > menu.offsetTop + 50) {
-        if (document.getElementById('userview_background')) {
+        if (document.getElementById('userview_background') || document.getElementById('recherche_background')) {
             menu.style.backgroundColor = 'white';
         } else {
             menu.style.backgroundColor = 'black';
@@ -13,6 +13,6 @@ window.addEventListener('scroll', function(e) {
     }
 });
 
-if (document.getElementById('userview_background')) {
-	logo = document.getElementById('logo_menu').className = "logo_dark";
+if (document.getElementById('userview_background') || document.getElementById('recherche_background')) {
+	logo = document.getElementById('logo_menu').id = "logo_dark";
 }

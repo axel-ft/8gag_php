@@ -1,0 +1,89 @@
+nav a {
+    color: #000000 !important;
+}
+
+#recherche_form > button[type="submit"] {
+    background: none !important;
+    color: #000000 !important;
+    border: 1px solid #000000 !important;
+}
+
+#recherche_form > button[type="submit"]:hover {
+    background: #ededed !important;
+    color: #333333 !important;
+}
+
+#recherche_background {
+	background: url('bg.png') repeat scroll;
+}
+
+#resultats {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap; 
+	justify-content: center;
+}
+
+.post {
+	padding: .5vw;
+  	flex-direction: column;
+	display: flex;
+}
+
+.post h3 {
+	text-align: center;
+}
+
+.description_post {
+	text-align: justify;
+	text-align-last: center;
+}
+
+.post div { 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  width: 400px; 
+  margin: .5vw; 
+  overflow: hidden;
+  height: 400px;
+}
+
+.post div img { 
+  height: auto;
+  width: 100%; 
+}
+
+#aucun_res {
+        background: url('aucun_res_background.jpg') no-repeat scroll;
+        background-size: cover;
+        width: 100vw;
+        height: 100vh;
+	position: absolute;
+	top: 0;
+}
+
+#aucun_res > div {
+	box-sizing: border-box;
+	text-align: center;
+	position: absolute;
+	background: rgba(0,0,0,0.5);
+	top: calc(50vh - 150px);
+	height: 300px;
+	width: 100vw;
+	color: #ffffff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#aucun_res > div > h2 {
+	margin: 20px auto;
+	font-size: 60px;
+}
+
+@media screen and (max-width: 400px) {
+  .post div { margin: 0; }
+  .post { padding: 0; }
+  
+}

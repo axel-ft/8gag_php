@@ -1,7 +1,8 @@
 <header id="home">
     <nav>
 	<form id="recherche_form" method="get" action="">
-                <input type="search" placeholder="Rechercher">
+		<input type="hidden" name="p" value="recherche">
+                <input type="search" name="query" placeholder="Rechercher">
                 <button type="submit"><i class="material-icons">search</i></button>
         </form>
 	

@@ -52,19 +52,26 @@ h1 {
 .post {
 	display: flex;
 	flex-direction: column;
-	box-sizing: border-box;
-	width: 33vw;
-	padding: 10px;
+	padding: .5vw;
+}
+
+.post div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 400px;
+  margin: .5vw;
+  overflow: hidden;
+  height: 400px;
 }
 
 .titre_post {
-	box-sizing: border-box;
-	word-break: break-all;
-	height: 20%; 
+	text-align: center;
 }
 
 .img_post {
-	max-width: 100%;
+	width: 100%;
+	height: auto;
 }
 
 .description_post {
@@ -75,5 +82,4 @@ h1 {
 	width: 100%;
 	word-break: break-all;
 	padding: 10px;
-	height: 20%;
 }
