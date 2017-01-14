@@ -7,12 +7,19 @@ if (!empty($_GET['id'])) {
 		$image = $img_array[0];
 		$extension = strrchr($image['name_img'], '.');
 
-		//Protection contre XSS
+		        //Protection contre XSS
                 $image['name_img'] = htmlentities($image['name_img']);
                 $image['description'] = htmlentities($image['description']);
 
 		$user = new UtilisateurSQL();
 		$sender = $user->getUser($image['id_user']);
+        
+                //Protection contre XSS
+                $sender['name'] = htmlentities($sender['name']);
+                $sender['fname'] = htmlentities($sender['fname']);
+                $sender['pseudo'] = htmlentities($sender['pseudo']);
+                $sender['mail'] = htmlentities($sender['mail']);
+        
 	} else {
 		header('Location: index.php');
 	}
