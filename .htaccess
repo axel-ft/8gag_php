@@ -1,0 +1,5 @@
+ErrorDocument 404 https://8gag.axelfloquet.fr/index.php?p=404
+ErrorDocument 403 https://8gag.axelfloquet.fr/index.php?p=403
+ErrorDocument 500 https://8gag.axelfloquet.fr/index.php?p=500
+
+Options -Indexes
