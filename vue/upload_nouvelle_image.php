@@ -16,12 +16,12 @@
 		if (isset($erreurremp)) echo $erreurremp;
 		if (isset($succes)) { echo $succes; } else if (isset($echec)) { echo $echec; } ?>
                 <label for="name_img">Nom de l'image  </label>
-                <input type="text" name="name_img" id="name_img"><br>
+                <input type="text" name="name_img" id="name_img" required pattern="[a-zA-Z0-9-_.]+"><br>
                 <label for="description" value="">Description  </label>
-                <input type="text" name="description" id="description"><br>
+                <input type="text" name="description" id="description" required><br>
                 <label for="image">Image  </label>
                 <div id="file-upload">
-			<input type="file" name="image" id="image">
+			<input type="file" name="image" id="image" required>
 			<label for="image" id="upload-label">Choisir une image&hellip;</label>
 			<p id="filepath" class="filepath"></p>
 			<div id="div_apercu"><img id="apercu"></div>

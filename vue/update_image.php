@@ -16,9 +16,9 @@
 	        <h3> Modifiez votre image</h3>
 		<?php if (isset($erreur)) echo $erreur; ?>
 	        <label for="name_img">Nom</label>
-	        <input type="text" placeholder="Nom" id="name_img" name="name_img" value="<?php echo $majimg[0]['name_img']?>">
+	        <input type="text" placeholder="Nom" id="name_img" name="name_img" value="<?php echo $majimg[0]['name_img']?>" required pattern="[a-zA-Z0-9-_.]+">
 	        <label for="description">Description</label>
-	        <input type="text" placeholder="Description" id="description" name="description" value="<?php echo $majimg[0]['description']?>">
+	        <input type="text" placeholder="Description" id="description" name="description" value="<?php echo $majimg[0]['description']?>" required>
 		<label for="image">Image <span style="color: #999999;">(laisser vide pour conserver)</span></label>
 		<div id="file-upload">
                         <input type="file" name="image" id="image">

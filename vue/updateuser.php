@@ -18,12 +18,12 @@
                 <?php echo '<div id="avatar"><img src="https://gravatar.com/avatar/'.md5($updateuser[0]['mail']).'?d=identicon&s=230" alt="avatar"></div>' ?>
                 <a id="modif_avatar" href="https://fr.gravatar.com/gravatars/new" target="_blank" class="button">Modifier votre avatar</a>
 		<label for="name">Nom</label>
-                <input type="text" placeholder="Nom" id="name" name="name" value="<?php echo $updateuser[0]['name'] ?>">
+                <input type="text" placeholder="Nom" id="name" name="name" value="<?php echo $updateuser[0]['name'] ?>" required pattern="[a-zA-Z0-9-]+">
 		<label for="fname">Prénom</label>
-                <input type="text" placeholder="Prénom" id="fname" name="fname" value="<?php echo $updateuser[0]['fname'] ?>">
+                <input type="text" placeholder="Prénom" id="fname" name="fname" value="<?php echo $updateuser[0]['fname'] ?>" required pattern="[a-zA-Z0-9-]+">
 		<label for="pseudo">Pseudo</label>
-                <input type="pseudo" placeholder="Pseudo" id="pseudo" name="pseudo" value="<?php echo $updateuser[0]['pseudo'] ?>">
-                <input type="mail" placeholder="E-Mail" id="mail" name="mail" value="<?php echo $updateuser[0]['mail'] ?>">
+                <input type="pseudo" placeholder="Pseudo" id="pseudo" name="pseudo" value="<?php echo $updateuser[0]['pseudo'] ?>" required pattern="[a-zA-Z0-9-_\.]{1,20}$">
+                <input type="mail" placeholder="E-Mail" id="mail" name="mail" value="<?php echo $updateuser[0]['mail'] ?>" required>
                 <input type="password" placeholder="Remplir pour modifier le mot de passe" id="password" name="password" >
                 <input type="password" placeholder="Confirmer votre mot de passe" id="pwdconfirm" name="pwdconfirm">
 		<button type="submit" class="button">Modifier</button>

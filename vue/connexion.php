@@ -13,8 +13,8 @@
         <h3>Connexion</h3>
 	<a href="index.php?p=inscription">Pas encore inscrit ? Inscrivez-vous</a>
         <?php if (isset($erreur)) echo $erreur; ?>
-        <input type="email" name="mail" placeholder="E-mail">
-        <input type="password" name="password" placeholder="Mot de passe">
+        <input type="email" name="mail" placeholder="E-mail" required>
+        <input type="password" name="password" placeholder="Mot de passe" required>
 
         <button type="submit" class="button">Connexion</button>
     </fieldset>
