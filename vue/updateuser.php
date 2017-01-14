@@ -22,7 +22,7 @@
 		<label for="fname">Prénom</label>
                 <input type="text" placeholder="Prénom" id="fname" name="fname" value="<?php echo $updateuser[0]['fname'] ?>" required pattern="[a-zA-Z0-9-]+">
 		<label for="pseudo">Pseudo</label>
-                <input type="pseudo" placeholder="Pseudo" id="pseudo" name="pseudo" value="<?php echo $updateuser[0]['pseudo'] ?>" required pattern="[a-zA-Z0-9-_\.]{1,20}$">
+                <input type="pseudo" placeholder="Pseudo" id="pseudo" name="pseudo" value="<?php echo $updateuser[0]['pseudo'] ?>" required maxlength="20" pattern="[a-zA-Z0-9-_\.]{1,20}$">
                 <input type="mail" placeholder="E-Mail" id="mail" name="mail" value="<?php echo $updateuser[0]['mail'] ?>" required>
                 <input type="password" placeholder="Remplir pour modifier le mot de passe" id="password" name="password" >
                 <input type="password" placeholder="Confirmer votre mot de passe" id="pwdconfirm" name="pwdconfirm">
