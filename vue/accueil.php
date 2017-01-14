@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    	<title>Accueil</title>
+    	<title>8gag</title>
 	<?php require_once('vue/head_commun.php'); ?>
 	<link rel="stylesheet" type="text/css" href="vue/css/index.css">
 </head>
@@ -32,7 +32,7 @@
 			?>
 
 				<div class="post">
-					<h3 class="titre_post"><?= $image['name_img'] ?></h3>
+					<h5 class="titre_post"><?= $image['name_img'] ?></h5>
 					<a href="index.php?p=image&id=<?= $image['id'] ?>"><div class="img_post" style="background-image: url('<?= $image['link'] ?>');"></div></a>
 					<p class="description_post"><?= $image['description'] ?></p>
 				</div>
