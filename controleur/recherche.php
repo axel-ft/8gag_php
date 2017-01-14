@@ -2,7 +2,7 @@
 
 if (!empty($_GET['query'])) {
 	$query = new ImageSQL();
-	$resultats = $query->get_images(null, null, $_GET['query'], null);
+	$resultats = $query->getImages(null, null, $_GET['query'], null);
 	
 	if (count($resultats) > 0) {
 		$presence = true;

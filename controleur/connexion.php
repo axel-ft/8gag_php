@@ -3,7 +3,7 @@
 require_once ('modele/utilisateursql.php');
 $utilisateur = new UtilisateurSQL();
 if (!empty($_POST['mail']) && !empty($_POST['password'])) {
-    $compte = $utilisateur->connect_compte();
+    $compte = $utilisateur->connectCompte();
     if (count($compte)>0 && intval($compte[0]['active']) === 1){
         $_SESSION['connected'] = true;
         $_SESSION['id_user'] = $compte[0]['id'];

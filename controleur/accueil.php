@@ -1,6 +1,6 @@
 <?php
 
 $imgreq  = new ImageSQL();
-$images = $imgreq->get_images(5);
+$images = $imgreq->getImages(5);
 
 require_once ('vue/accueil.php');

@@ -1,7 +1,7 @@
 <?php
 class ImageSQL {
 	//Insérer les informations d'image
-	public function insert_image($date_upload, $chemin_image) {
+	public function insertImage($date_upload, $chemin_image) {
 		global $db;
         	$image_ins = $db->prepare('INSERT INTO images(date_upload, ip_user, id_user, link, name_img, description) VALUES (:date_upload, :ip_user, :id_user, :link, :name_img, :description)');
 		$image_ins->bindParam(':date_upload', $date_upload, PDO::PARAM_STR);
@@ -24,7 +24,7 @@ class ImageSQL {
 	**	Utiliser null pour ne pas tenir compte d'un argument
 	**
 	*****/
-	public function get_images($limit = null, $id_user = null, $name = null, $id = null) {
+	public function getImages($limit = null, $id_user = null, $name = null, $id = null) {
 		global $db;
 
 		if ($limit !== null) {
@@ -94,7 +94,7 @@ class ImageSQL {
 	}
 
 	//Modifier les informations d'image sans modifier le fichier
-	public function maj_image() {
+	public function majImage() {
                 global $db;
 		$datetime = date_create()->format('Y-m-d H:i:s');
 		$intid_user = intval($_SESSION['id_user']);
@@ -110,7 +110,7 @@ class ImageSQL {
 	}
 
 	//Modifier le lien d'image dans la bdd lors d'une modification d'image
-	public function maj_image_fichier($chemin_image) {
+	public function majImageFichier($chemin_image) {
                 global $db;
 		$intid_img = intval($_GET['id']);
                 $maj_link = $db->prepare('UPDATE images SET link = :link WHERE id = :id');
@@ -120,7 +120,7 @@ class ImageSQL {
 	}
 	
 	//Supprimer une image de la base de données
-	public function supprimer_image($id_image) {
+	public function supprimerImage($id_image) {
 		global $db;
 		$supp_image = $db->prepare('DELETE FROM images WHERE id = :id');
 		$intid = intval($id_image);
