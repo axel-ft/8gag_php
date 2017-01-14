@@ -11,7 +11,7 @@
 
 	<section id="bienvenue">
 		<div>
-			<h1>Bienvenue sur 8gag</h1>
+			<h1>Bienvenue sur 8GAG</h1>
 			<h2>Partagez vos images</h2>
 			<p>Vous pouvez envoyer vos images sur ce site pour les partager. Un lien direct vous est donné à l'issue de l'upload.<br>
 			Dans la limite de 10 Mo, les formats JPEG, JPG, PNG, BMP, et GIF sont acceptés.</p>

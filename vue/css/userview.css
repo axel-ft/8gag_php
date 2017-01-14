@@ -52,6 +52,10 @@ aside#identite {
     margin-top: 10px;
 }
 
+.post div {
+    margin: 30px;
+}
+
 #avatar {
     overflow: hidden;
     -webkit-border-radius: 20px;
@@ -71,13 +75,13 @@ aside#identite {
 }
 
 .modifier {
-    top: -310px;
-    left: -15px;
+    top: -330px;
+    left: 10px;
 }
 
 .supprimer {
-    top: -270px;
-    left: 185px;
+    top: -290px;
+    left: 210px;
 }
 
 .modifier > i, .supprimer > i{
