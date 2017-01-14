@@ -17,8 +17,6 @@
             <a class="button" id="modifier_profil" href="index.php?p=update_user">Modifier</a>
         </aside>
 
-        <div class="vr"></div>
-
         <section id="images_user">
             <h3 id="h3_images">Mes images</h3>
             <?php

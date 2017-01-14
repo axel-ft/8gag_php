@@ -343,6 +343,7 @@ input[type=search]:focus {
         background-repeat: no-repeat;
         background-attachment: scroll;
 	background-position: center;
+	border-radius: 3px;
 }
 
 .titre_post {
@@ -366,5 +367,15 @@ input[type=search]:focus {
 	#button_div {
 		flex-direction: column;
 		align-items: center;
+	}
+
+	#info_image, #identite, #images_user {
+		width: 100% !important;
+		float: none !important;
+		clear: both;
+	}
+
+	#images_user {
+		margin-top: 50px !important;
 	}
 }

@@ -12,6 +12,13 @@
 	<section id="image">
 		<img src="<?php if (isset($image)) echo $image['link']; ?>" alt="" >
 	</section>
+	
+        <section id="info_image">
+                <h2 class="titre_post"><?php if (isset($image)) echo $image['name_img']; ?></h2>
+                <p class="description_post"><?php if (isset($image)) echo $image['description']; ?></p>
+                <?php if ($_SESSION['id_user'] === $image['id_user']) echo '<a href="index.php?p=update_image&id=' . $image['id'] . '"  class="button">Modifier</a>'; ?>
+                <a href="<?php if (isset($image)) echo $image['link']; ?>" download="<?php if (isset($image)) echo $image['name_img'] . $extension; ?>" class="button">Télécharger</a>
+        </section>
 
         <aside id="identite">
 		<h4>Publié par : </h4>
@@ -23,14 +30,6 @@
 
 		<p>Le : <?php if (isset($image)) echo $image['date_upload']; ?></p>
         </aside>
-
-	<section id="info_image">
-		<h2 class="titre_post"><?php if (isset($image)) echo $image['name_img']; ?></h2>
-		<p class="description_post"><?php if (isset($image)) echo $image['description']; ?></p>
-		<?php if ($_SESSION['id_user'] === $image['id_user']) echo '<a href="index.php?p=update_image&id=' . $image['id'] . '"  class="button">Modifier</a>'; ?>
-		<a href="<?php if (isset($image)) echo $image['link']; ?>" download="<?php if (isset($image)) echo $image['name_img'] . $extension; ?>" class="button">Télécharger</a>
-	</section>
-
 </div>
 
 </body>
