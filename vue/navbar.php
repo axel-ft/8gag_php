@@ -19,7 +19,6 @@
                 <li><a href="index.php?p=logout">Déconnexion</a></li>
             <?php } ?>
 
-            <li><a href="#">A propos</a></li>
         </ul>
     </nav>
 </header>
