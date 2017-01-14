@@ -13,6 +13,8 @@
 
                 if (!in_array($extension, $extensions) && !in_array($mime, $mimes)) {
                         $erreur = '<p>Vous devez uploader un fichier de type PNG, GIF, JPG, JPEG, ou BMP</p>';
+				$status = 'erreur';
+        			$texte = "Le format est incorrect";
                 }
 
 		finfo_close($finfo);

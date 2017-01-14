@@ -8,7 +8,7 @@
 <body id="upload_background">
 	<?php require_once('vue/navbar.php');?>
 
-        <form action="" method="POST" enctype="multipart/form-data" class="form">
+        <form action="index.php?p=upload" method="POST" enctype="multipart/form-data" id="upload-image" class="form">
             <fieldset>
                 <h3>Uploader une image</h3>
                 <?php if (isset($erreurupload)) echo $erreurupload;
@@ -22,13 +22,18 @@
                 <label for="image">Image  </label>
                 <div id="file-upload">
 			<input type="file" name="image" id="image">
-			<label for="image" id="upload-label">Choisir une image...</label>
+			<label for="image" id="upload-label">Choisir une image&hellip;</label>
 			<p id="filepath" class="filepath"></p>
+			<div id="div_apercu"><img id="apercu"></div>
 		</div>
                 <button type="submit" name="ajouter" class="button" id="ajouter">Ajouter</button>
             </fieldset>
         </form>
 
-<script type="text/javascript" src="vue/js/upload-button.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script type="text/javascript" src="vue/js/upload_ajax.js"></script>
 </body>
 </html>
