@@ -38,3 +38,7 @@
 	flex-wrap: wrap;
 	justify-content: center;
 }
+
+.titre_post, .description_post {
+	max-width: 400px;
+}

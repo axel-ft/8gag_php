@@ -1,0 +1,47 @@
+#container {
+	position: relative;
+	top: -60px;
+}
+
+#image > img {
+	width: 100vw;
+}
+
+aside#identite {
+	float: left;
+	width: 35vw;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+	top: 32px;
+}
+
+#info_image {
+	float: right;
+    	width: 63vw;
+    	display: flex;
+    	flex-direction: row;
+    	flex-wrap: wrap;
+    	justify-content: center;
+    	margin-top: 10px;
+	min-height: 235px;
+}
+
+#avatar {
+	display: flex;
+}
+
+#pseudoname {
+	margin-left: 30px;
+}
+
+.button {
+	align-self: flex-end;
+	margin-right: 20px;
+}
+
+.description_post {
+	text-align-last: left !important;
+}

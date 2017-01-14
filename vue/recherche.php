@@ -22,7 +22,7 @@
 
 				<div class="post">
 					<h3 class="titre_post"><?= $resultat['name_img'] ?></h3>
-					<div><img class="img_post" alt="" src="<?= $resultat['link'] ?>"></div>
+					<a href="index.php?p=image&id=<?= $resultat['id'] ?>"><div><img class="img_post" alt="" src="<?= $resultat['link'] ?>"></div></a>
 					<p class="description_post"><?= $resultat['description'] ?></p>
 				</div>
 

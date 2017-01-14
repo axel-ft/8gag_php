@@ -96,19 +96,26 @@ class ImageSQL {
 	//Modifier les informations d'image sans modifier le fichier
 	public function maj_image() {
                 global $db;
+		$datetime = date_create()->format('Y-m-d H:i:s');
+		$intid_user = intval($_SESSION['id_user']);
+		$intid_img = intval($_GET['id']);
                 $maj_image = $db->prepare('UPDATE images SET name_img = :name_img, description = :description, ip_user = :ip_user, id_user = :id_user, date_upload = :date_upload WHERE id = :id');
-                $maj_image->bindParam(':date_upload', $date_upload, PDO::PARAM_STR);
+                $maj_image->bindParam(':date_upload', $datetime, PDO::PARAM_STR);
                 $maj_image->bindParam(':ip_user', $_SERVER['REMOTE_ADDR'], PDO::PARAM_STR);
-                $maj_image->bindParam(':id_user', $_SESSION['id_user'], PDO::PARAM_INT);
+                $maj_image->bindParam(':id_user', $intid_user, PDO::PARAM_INT);
                 $maj_image->bindParam(':name_img', $_POST['name_img'], PDO::PARAM_STR);
                 $maj_image->bindParam(':description', $_POST['description'], PDO::PARAM_STR);
+                $maj_image->bindParam(':id', $intid_img, PDO::PARAM_INT);
                 $maj_image->execute();
 	}
 
 	//Modifier le lien d'image dans la bdd lors d'une modification d'image
 	public function maj_image_fichier($chemin_image) {
-                $maj_link = $db->prepare('UPDATE images SET link = :chemin_image WHERE id = :id');
+                global $db;
+		$intid_img = intval($_GET['id']);
+                $maj_link = $db->prepare('UPDATE images SET link = :link WHERE id = :id');
                 $maj_link->bindParam(':link', $chemin_image, PDO::PARAM_STR);
+                $maj_link->bindParam(':id', $intid_img, PDO::PARAM_INT);
                 $maj_link->execute();
 	}
 	

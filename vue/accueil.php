@@ -33,7 +33,7 @@
 
 				<div class="post">
 					<h3 class="titre_post"><?= $image['name_img'] ?></h3>
-					<div><img class="img_post" alt="" src="<?= $image['link'] ?>"></div>
+					<a href="index.php?p=image&id=<?= $image['id'] ?>"><div><img class="img_post" alt="" src="<?= $image['link'] ?>"></div></a>
 					<p class="description_post"><?= $image['description'] ?></p>
 				</div>
 

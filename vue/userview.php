@@ -28,10 +28,10 @@
                 ?>
 
             				<div class="post">
-                				<div class="small"><img class="img_post" alt="" src="<?= $userimgviewer['link'] ?>"></div>
+                				<a href="?p=image&id=<?= $userimgviewer['id'] ?>"><div class="small"><img class="img_post" alt="" src="<?= $userimgviewer['link'] ?>"></div></a>
                 				<h3 class="titre_post_small"><?= $userimgviewer['name_img'] ?></h3>
                 				<a href="index.php?p=deleteimg&image=<?=$userimgviewer['id']?>" class="button supprimer"><i class="material-icons">clear</i></a>
-                                <a class="button supprimer" href="index.php?p=updateimg&image=<?=$userimgviewer['id']?>"><i class="material-icons">edit</i></a>
+                                <a class="button modifier" href="index.php?p=update_image&id=<?=$userimgviewer['id']?>"><i class="material-icons">edit</i></a>
             				</div>
                 <?php 		} 
 			} else { echo '<div id="no_images"><h4>Vous n\'avez pas d\'images</h4></div>'; }

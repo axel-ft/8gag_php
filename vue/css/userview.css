@@ -62,18 +62,25 @@ aside#identite {
     margin: 20px auto;
 }
 
-.supprimer {
+.modifier, .supprimer {
     width: 40px;
     border-radius: 50% !important;
     height: 40px;
     padding: 0 !important;
     position: relative;
+}
+
+.modifier {
+    top: -310px;
+    left: -15px;
+}
+
+.supprimer {
     top: -270px;
     left: 185px;
 }
 
-
-.supprimer > i{
+.modifier > i, .supprimer > i{
         position: relative;
         left: 8px;
 }
