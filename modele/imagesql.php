@@ -45,7 +45,7 @@ class ImageSQL {
 
 		$select = 'SELECT * FROM images ';
 		$idreq = 'WHERE id = :id ';
-		$namereq = 'WHERE name_img OR description LIKE :namereq ';
+		$namereq = 'WHERE (name_img LIKE :namereq) OR (description LIKE :namereq)';
 		$user = 'WHERE id_user = :id_user ';
                 $limitreq = 'LIMIT :limit';
                 $orderby = 'ORDER BY date_upload DESC ';

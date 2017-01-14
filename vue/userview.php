@@ -28,7 +28,7 @@
                 ?>
 
             				<div class="post">
-                				<a href="?p=image&id=<?= $userimgviewer['id'] ?>"><div class="small"><img class="img_post" alt="" src="<?= $userimgviewer['link'] ?>"></div></a>
+                				<a href="?p=image&id=<?= $userimgviewer['id'] ?>"><div class="small img_post" style="background-image: url('<?= $userimgviewer['link'] ?>');"></div></a>
                 				<h3 class="titre_post_small"><?= $userimgviewer['name_img'] ?></h3>
                 				<a href="index.php?p=deleteimg&image=<?=$userimgviewer['id']?>" class="button supprimer"><i class="material-icons">clear</i></a>
                                 <a class="button modifier" href="index.php?p=update_image&id=<?=$userimgviewer['id']?>"><i class="material-icons">edit</i></a>

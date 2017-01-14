@@ -39,6 +39,10 @@ nav li a:hover{
     justify-content: center;
 }
 
+.description_post {
+	max-width: 400px;
+}
+
 #aucun_res {
         background: url('aucun_res_background.jpg') no-repeat scroll;
         background-size: cover;

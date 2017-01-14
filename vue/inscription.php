@@ -15,6 +15,7 @@ require_once ('vue/navbar.php');
         <form action="" method="post" class="form">
             <fieldset>
                 <h3>Inscription</h3>
+		<a href="index.php?p=connexion">Déjà inscrit ? Connectez-vous</a>
                 <?php if (isset($erreur)) echo $erreur; ?>
                 <?php if (isset($succes)) echo $succes; ?>
                     <input type="text" name="name" placeholder="Nom">

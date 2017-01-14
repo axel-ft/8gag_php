@@ -5,7 +5,7 @@
     <?php require_once('vue/head_commun.php'); ?>
     <link rel="stylesheet" href="vue/css/form.css">
 </head>
-<body id="update_background">
+<body id="update_user_background">
 
     <?php require_once('vue/navbar.php'); ?>
 

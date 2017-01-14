@@ -52,6 +52,10 @@ aside#identite {
     margin-top: 10px;
 }
 
+.post {
+	position: relative;
+}
+
 .post div {
     margin: 30px;
 }
@@ -71,17 +75,17 @@ aside#identite {
     border-radius: 50% !important;
     height: 40px;
     padding: 0 !important;
-    position: relative;
+    position: absolute;
 }
 
 .modifier {
-    top: -330px;
-    left: 10px;
+    top: 20px;
+    left: 20px;
 }
 
 .supprimer {
-    top: -290px;
-    left: 210px;
+    top: 20px;
+    left: 218px;
 }
 
 .modifier > i, .supprimer > i{
@@ -98,9 +102,9 @@ aside#identite {
 .titre_post_small {
 	text-align: center;
 	font-size: 18px;
-	text-overflow: ellipsis;
-	max-width: 215px;
-	overflow: hidden;
+	word-wrap: break-word;
+	word-break: break-all;
+	max-width: calc(260px + 0.5vw);
 }
 
 #no_images {
