@@ -39,9 +39,14 @@ aside#identite {
 
 .button {
 	align-self: flex-end;
-	margin-right: 20px;
+	margin-left: 20px;
+}
+
+.titre_post {
+	max-width: none !important;
 }
 
 .description_post {
 	text-align-last: left !important;
+	max-width: none !important;
 }
