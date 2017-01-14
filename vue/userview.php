@@ -10,8 +10,8 @@
 	<?php require_once('vue/navbar.php'); ?>
 	<aside id="identite">
         	<div id="avatar"><img src="https://gravatar.com/avatar/<?= md5($profil[0]['mail']) ?>?d=identicon&s=230" alt="avatar"></div>
-        	<h2><?=$profil[0]['fname'].' '.$profil[0]['name']?></h2>
-        	<h4><?=$profil[0]['pseudo']?></h4>
+        	<h4><?=$profil[0]['fname'].' '.$profil[0]['name']?></h4>
+        	<h5><?=$profil[0]['pseudo']?></h5>
         	<a class="button" id="modifier_profil" href="index.php?p=update_user">Modifier</a>
     	</aside>
 

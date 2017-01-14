@@ -27,7 +27,7 @@
 	<section id="info_image">
 		<h2 class="titre_post"><?php if (isset($image)) echo $image['name_img']; ?></h2>
 		<p class="description_post"><?php if (isset($image)) echo $image['description']; ?></p>
-		<?php if ($_SESSION['id_user'] === $image['id_user']) echo '<a href="index.php?p=update_image&id=' . $image['id'] . '"  class="button">Modifier</a>'; ?>
+		<?php if ($_SESSION['id_user'] === $image['id_user']) echo '<a href="index.php?p=mon_compte'. '"  class="button">Modifier</a>'; ?>
 		<a href="<?php if (isset($image)) echo $image['link']; ?>" download="<?php if (isset($image)) echo $image['name_img'] . $extension; ?>" class="button">Télécharger</a>
 	</section>
 
