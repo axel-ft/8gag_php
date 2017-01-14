@@ -7,7 +7,7 @@ class UtilisateurSQL {
 	*****/
 
 	//Création d'un compte utilisateur
-	public function inscription_compte() {
+	public function inscriptionCompte() {
 		global $db;
 		$password = crypt($_POST['password'], '$2a$07$302838711915bef2db65cc$');
 		$inscription = $db->prepare('INSERT INTO users(name, fname, pseudo, mail, password) VALUES (:name, :fname, :pseudo, :mail, :password)');
@@ -20,7 +20,7 @@ class UtilisateurSQL {
 	}
 	
 	//Récupère les informations d'un utilisateur pour la connexion (via mail et password)
-        public function connect_compte() {
+        public function connectCompte() {
 		global $db;
                 $connexion = $db->prepare('SELECT * FROM users WHERE mail = :mail AND password = :password');
                 $connexion->bindParam(':mail', $_POST['mail']);
@@ -32,7 +32,7 @@ class UtilisateurSQL {
         }
 
 	//Test présence de compte par mail
-        public function mail_test() {
+        public function mailTest() {
                 global $db;
                 $connexion = $db->prepare('SELECT * FROM users WHERE mail = :mail');
                 $connexion->bindParam(':mail', $_POST['mail']);
@@ -46,7 +46,7 @@ class UtilisateurSQL {
         }
 
 	//Récupérer un utilisateur en précisant l'id en argument. Si aucun id n'est précisé tous les utilisateurs sont retournés
-	public function get_user($id = null) {
+	public function getUser($id = null) {
 		global $db;
 		if ($id !== null) {
         		$get_users = $db->prepare('SELECT * FROM users WHERE id = :id');
@@ -64,7 +64,7 @@ class UtilisateurSQL {
 	}
 
 	//Désactiver le compte utilisateur connecté
-	public	function desactiver_compte() {
+	public	function desactiverCompte() {
 		global $db;
 		$desactiver = $db->prepare('UPDATE users SET active = 0 WHERE id = :id');
 		$desactiver->bindParam(':id', $_SESSION['id_user'], PDO::PARAM_INT);
@@ -72,7 +72,7 @@ class UtilisateurSQL {
 	}
 
 	//Mettre à jour le profil à l'exception du mot de passe
-	public function maj_compte() {
+	public function majCompte() {
 		global $db;
 		$maj = $db->prepare('UPDATE users SET name = :name, fname = :fname, pseudo = :pseudo, mail = :mail WHERE id = :id');
 		$maj->bindParam(':name', $_POST['name'], PDO::PARAM_STR);
@@ -84,7 +84,7 @@ class UtilisateurSQL {
 	}
 
 	//Mettre la jour le mot de passe de l'utilisateur
-	public function maj_password() {
+	public function majPassword() {
 		global $db;
 		$password = crypt($_POST['password'], '$2a$07$302838711915bef2db65cc$');
 		$majpwd = $db->prepare('UPDATE users SET password = :password WHERE id = :id');

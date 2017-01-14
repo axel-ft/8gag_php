@@ -5,8 +5,8 @@
 
 if (!empty($_POST['name']) && !empty($_POST['fname']) && !empty($_POST['pseudo']) && !empty($_POST['mail']) && !empty($_POST['password']) && $_POST['password'] === $_POST['pwdconfirm'])
 {
-   if ($create->mail_test()) {
-        $create->inscription_compte();
+   if ($create->mailTest()) {
+        $create->inscriptionCompte();
 	$succes = "<p>Inscription terminée</p>";
    } else {
         $erreur = "<p>Il existe déjà un compte pour cette adresse mail</p>";

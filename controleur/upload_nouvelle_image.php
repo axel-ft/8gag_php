@@ -5,7 +5,7 @@
 	
         if (isset($datetime) && !empty($_SERVER['REMOTE_ADDR']) && !empty($_SESSION['id_user']) && isset($chemin) && !empty($_POST['name_img']) && !empty($_POST['description'])) {
 		$nouvelle_image = new ImageSQL();
-		$nouvelle_image->insert_image($datetime, $chemin);
+		$nouvelle_image->insertImage($datetime, $chemin);
         } else if (empty($_POST)) {} else {
                 $erreurupload = "<p>Il y a un problème... Veuillez vérifier que vous avez tout rempli</p>";
         }
