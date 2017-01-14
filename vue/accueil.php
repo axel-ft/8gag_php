@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    	<title>8gag</title>
+    	<title>8GAG</title>
 	<?php require_once('vue/head_commun.php'); ?>
 	<link rel="stylesheet" type="text/css" href="vue/css/index.css">
 </head>
