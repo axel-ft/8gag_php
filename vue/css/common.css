@@ -362,6 +362,10 @@ input[type=search]:focus {
         padding: 10px;
 }
 
+.erreur {
+	color: firebrick;
+}
+
 /* UN PEU DE RESPONSIVE */
 @media screen and (max-width: 690px) {
 	#button_div {

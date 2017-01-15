@@ -34,6 +34,6 @@
   src="https://code.jquery.com/jquery-3.1.1.min.js"
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
-<script type="text/javascript" src="vue/js/upload_ajax.js"></script>
+<script type="text/javascript" src="vue/js/upload.js"></script>
 </body>
 </html>

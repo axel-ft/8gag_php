@@ -7,7 +7,7 @@
 		$nouvelle_image = new ImageSQL();
 		$nouvelle_image->insertImage($datetime, $chemin);
         } else if (empty($_POST)) {} else {
-                $erreurupload = "<p>Il y a un problème... Veuillez vérifier que vous avez tout rempli</p>";
+                $erreurupload = "<p class='erreur'>Il y a un problème... Veuillez vérifier que vous avez tout rempli</p>";
         }
 	
 	require_once('vue/upload_nouvelle_image.php');

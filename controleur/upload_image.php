@@ -12,23 +12,21 @@
 		$mimes = array('image/png', 'image/gif', 'image/jpeg', 'image/bmp');
 
                 if (!in_array($extension, $extensions) && !in_array($mime, $mimes)) {
-                        $erreur = '<p>Vous devez uploader un fichier de type PNG, GIF, JPG, JPEG, ou BMP</p>';
-				$status = 'erreur';
-        			$texte = "Le format est incorrect";
+                        $erreur = '<p class="erreur">Vous devez uploader un fichier de type PNG, GIF, JPG, JPEG, ou BMP</p>';
                 }
 
 		finfo_close($finfo);
 
                 if ($taille > $taille_maxi) {
-			$erreur = '<p>Le fichier est trop gros...</p>';
+			$erreur = '<p class="erreur">Le fichier est trop gros...</p>';
 		}
                 if(!isset($erreur)) {
                         if(move_uploaded_file($_FILES['image']['tmp_name'], $dossier . $image)) {
                                 $chemin = $dossier . $image;
 				$datetime = date_create()->format('Y-m-d H:i:s');
-                                $succes = '<p>Upload effectué avec succès !</p>';
+                                $succes = '<p style="color: green;">Upload effectué avec succès !</p>';
                         } else {
-                                $echec = '<p>Echec de l\'upload !</p>';
+                                $echec = '<p class="erreur">Echec de l\'upload !</p>';
                         }
                 }
 	}

@@ -1,8 +1,6 @@
 <?php
 if (!isset($_SESSION['connected']) || $_SESSION['connected'] === false) header('Location: index.php?p=connexion');
 
-require_once ('modele/utilisateursql.php');
-
 $update = new UtilisateurSQL();
 $updateuser = $update->getUser($_SESSION['id_user']);
 
@@ -15,7 +13,7 @@ if (!empty($_POST['name']) && !empty($_POST['fname']) && !empty($_POST['pseudo']
         $update->majPassword();
         header('Location: index.php?p=mon_compte');
     } else {
-        echo "<h3>Tous les champs ne sont pas remplis ou les mots de passes ne correspondent pas. Vous pouvez laisser le champ mot de passe vide pour conserver votre mot de passe actuel</h3>";
+        $erreur = "<p class='erreur'>Tous les champs ne sont pas remplis ou les mots de passes ne correspondent pas. Vous pouvez laisser le champ mot de passe vide pour conserver votre mot de passe actuel</p>";
     };
 }
 

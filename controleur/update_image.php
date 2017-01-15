@@ -20,7 +20,7 @@ if (!empty($_POST['name_img']) && !empty($_POST['description'])) {
 	$intid_img = intval($_GET['id']);
 	header('Location: index.php?p=image&id=' . $intid_img);
 } else if (!empty($_POST)) {
-        $erreur = "<p>Tous les champs ne sont pas remplis</p>";
+        $erreur = "<p class='erreur'>Tous les champs ne sont pas remplis</p>";
 }
 
 require_once ('vue/update_image.php');

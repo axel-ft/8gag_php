@@ -17,6 +17,7 @@
 
                 <?php echo '<div id="avatar"><img src="https://gravatar.com/avatar/'.md5($updateuser[0]['mail']).'?d=identicon&s=230" alt="avatar"></div>' ?>
                 <a id="modif_avatar" href="https://fr.gravatar.com/gravatars/new" target="_blank" class="button">Modifier votre avatar</a>
+		<?php if (isset($erreur)) echo $erreur; ?>
 		<label for="name">Nom</label>
                 <input type="text" placeholder="Nom" id="name" name="name" value="<?php echo $updateuser[0]['name'] ?>" required pattern="[a-zA-Z0-9-]+">
 		<label for="fname">Prénom</label>

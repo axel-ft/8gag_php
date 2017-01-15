@@ -1,7 +1,5 @@
 $(document).ready(function (e) {
 	$('#upload-image').find('input[name="image"]').on('change', function (e) {
- 		$('#filepath').html(document.getElementById('image').value.split("\\")[document.getElementById('image').value.split("\\").length - 1]);
-
 
    	     	$("#message").empty();
 
@@ -13,10 +11,13 @@ $(document).ready(function (e) {
             		var match = ["image/jpeg", "image/png", "image/jpg", "image/bmp", "image/gif"];
 	    
 			if (!((filetype == match[0]) || (filetype == match[1]) || (filetype == match[2]) || (filetype == match[3]) || (filetype == match[4]))) {
-                		$('#apercu').attr('src', 'noimage.png');
+                		$('#apercu').attr('src', 'stop.jpg');
                 		$("#message").html("<p id='message' class='erreur'>Types d'image accepté : JPG, JPEG, PNG, BMP, et GIF</p>");
+				$("#upload-label").css("background-color", "firebrick");
+				$('#apercu').attr('height', '230px');
                 		return false;
             		} else {
+				$('#filepath').html(document.getElementById('image').value.split("\\")[document.getElementById('image').value.split("\\").length - 1]);
                 		var reader = new FileReader();
                 		reader.onload = imageIsLoaded;
                 		reader.readAsDataURL($(this)["0"].files[0]);

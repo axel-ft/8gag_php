@@ -7,12 +7,12 @@ if (!empty($_POST['name']) && !empty($_POST['fname']) && !empty($_POST['pseudo']
 {
    if ($create->mailTest()) {
         $create->inscriptionCompte();
-	$succes = "<p>Inscription terminée</p>";
+	$succes = "<p class='erreur'>Inscription terminée</p>";
    } else {
-        $erreur = "<p>Il existe déjà un compte pour cette adresse mail</p>";
+        $erreur = "<p class='erreur'>Il existe déjà un compte pour cette adresse mail</p>";
    }
 } else if (empty($_POST)) {} else {
-    $erreur = '<p>Il y a eu une erreur...</p>';
+    $erreur = '<p class="erreur">Il y a eu une erreur...</p>';
 }
 
     require_once('vue/inscription.php');

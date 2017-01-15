@@ -15,6 +15,7 @@
 	    <fieldset>
 	        <h3> Modifiez votre image</h3>
 		<?php if (isset($erreur)) echo $erreur; ?>
+		<div id="message"></div>
 	        <label for="name_img">Nom</label>
 	        <input type="text" placeholder="Nom" id="name_img" name="name_img" value="<?php echo $majimg[0]['name_img']?>" required pattern="[a-zA-Z0-9-_.]+">
 	        <label for="description">Description</label>
@@ -33,8 +34,7 @@
   src="https://code.jquery.com/jquery-3.1.1.min.js"
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
-<script type="text/javascript" src="vue/js/upload_ajax.js"></script>
-<script type="text/javascript" src="vue/js/upload-button.js"></script>
+<script type="text/javascript" src="vue/js/upload.js"></script>
 </body>
 
 </html>
