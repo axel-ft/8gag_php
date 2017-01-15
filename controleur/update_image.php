@@ -6,7 +6,7 @@ $maj = new ImageSQL();
 $majimg = $maj->getImages(null, null, null,$_GET['id']);
     
 //Protection contre XSS
-$majimg[0]['name_img'] = htmlentities($amjimg[0]['name_img']);
+$majimg[0]['name_img'] = htmlentities($majimg[0]['name_img']);
 $majimg[0]['description'] = htmlentities($majimg[0]['description']);
 
 // Un utilisateur ne peut pas modifier les images des autres utilisateurs
