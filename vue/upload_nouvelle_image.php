@@ -15,6 +15,7 @@
 		if (isset($erreur)) echo $erreur;
 		if (isset($erreurremp)) echo $erreurremp;
 		if (isset($succes)) { echo $succes; } else if (isset($echec)) { echo $echec; } ?>
+		<div id="message"></div>
                 <label for="name_img">Nom de l'image  </label>
                 <input type="text" name="name_img" id="name_img" required pattern="[a-zA-Z0-9-_.]+"><br>
                 <label for="description" value="">Description  </label>
