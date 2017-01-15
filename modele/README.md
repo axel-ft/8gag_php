@@ -20,5 +20,5 @@ Il n'a pas été ajouté ici pour ne pas afficher le mot de passe de connexion �
 
 # Dumps SQL
 
-Le dossier contient aussi deux dumps SQL : un ne contenant que les tables vides, et le deuxième contenant un utilisateur et des images exemples.
-Le nom d'utilisateur à utiliser est "test@test.fr" et le mot de passe est "ProjetPHP!"
+Le dossier contient aussi deux dumps SQL : un ne contenant que les tables vides, et le deuxième contenant un utilisateur et des images exemples.<br>
+Dans le deuxième cas, il y a un compte préenregistré : le nom d'utilisateur à utiliser est "test@test.fr" et le mot de passe est "ProjetPHP!"
